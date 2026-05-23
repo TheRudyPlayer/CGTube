@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CGTube Links</title>
 </head>
 <body>
@@ -10,17 +9,26 @@
 <script>
 
 /*
+========================================
+CGTube Links
+========================================
+
 SOLO LINKS.
 SIN INTERFAZ.
 
-Aquí agregas:
-- videos
-- shorts
+Este archivo:
+- guarda links
+- index.html los leerá automáticamente
 
-Y index.html los leerá automáticamente.
+NO MODIFICAR:
+"CGTubeLinks"
+
+========================================
 */
 
 const CGTubeLinks = [
+
+/* VIDEOS */
 
 "https://youtu.be/_hdKjo5NR40",
 "https://youtu.be/m3M-RwZebEk",
@@ -123,17 +131,45 @@ const CGTubeLinks = [
 "https://youtu.be/H1mD1MnVej0",
 "https://youtu.be/sV0kGvV9e8o",
 "https://youtu.be/a4OWl188EKA",
-"https://youtu.be/oTUQcQTUY8g",
-"https://youtu.be/H1mD1MnVej0"
+"https://youtu.be/oTUQcQTUY8g"
 
 ];
 
+/*
+========================================
+GUARDAR
+========================================
+*/
+
+localStorage.removeItem("CGTubeLinks");
+
 localStorage.setItem(
-    "CGTubeLinks",
-    JSON.stringify(CGTubeLinks)
+"CGTubeLinks",
+JSON.stringify(CGTubeLinks)
 );
 
-console.log("Links guardados correctamente");
+/*
+========================================
+VERIFICACIÓN
+========================================
+*/
+
+console.log(
+"CGTube Links guardados:",
+CGTubeLinks.length
+);
+
+/*
+========================================
+IMPORTANTE
+========================================
+
+1. Abre ESTE archivo primero
+2. Después abre index.html
+3. Ambos deben estar en la misma carpeta/proyecto
+
+========================================
+*/
 
 </script>
 
