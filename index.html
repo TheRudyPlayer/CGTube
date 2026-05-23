@@ -22,9 +22,9 @@ body.light{
     --panel:#ffffff;
     --card:#ffffff;
     --hover:#f2f2f2;
-    --text:#0f0f0f;
+    --text:#111111;
     --sub:#606060;
-    --border:#e5e5e5;
+    --border:#dddddd;
 }
 
 *{
@@ -50,18 +50,15 @@ body{
     height:100vh;
     background:var(--panel);
     border-right:1px solid var(--border);
-
     display:flex;
     flex-direction:column;
     align-items:center;
-
     z-index:100;
 }
 
 .sidebar-logo{
     width:100%;
     height:70px;
-
     display:flex;
     align-items:center;
     justify-content:center;
@@ -76,21 +73,16 @@ body{
 .nav-btn{
     width:64px;
     height:74px;
-
     border:none;
     background:none;
     color:var(--text);
-
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-
     gap:6px;
-
     border-radius:12px;
     cursor:pointer;
-
     transition:.15s;
 }
 
@@ -124,19 +116,13 @@ body{
 .topbar{
     position:sticky;
     top:0;
-
     height:56px;
-
     background:var(--bg);
-
     border-bottom:1px solid var(--border);
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:0 16px;
-
     z-index:50;
 }
 
@@ -155,58 +141,42 @@ body{
 .search{
     width:50%;
     max-width:650px;
-
     display:flex;
     align-items:center;
-
     border:1px solid var(--border);
     border-radius:999px;
-
     overflow:hidden;
-
     background:var(--bg);
 }
 
 .search input{
     flex:1;
     height:40px;
-
     border:none;
     outline:none;
-
     background:transparent;
-
     color:var(--text);
-
     padding:0 14px;
-
     font-size:15px;
 }
 
 .search button{
     width:60px;
     height:40px;
-
     border:none;
     border-left:1px solid var(--border);
-
     background:var(--card);
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     cursor:pointer;
 }
 
 .search button svg{
     width:20px;
     height:20px;
-
     stroke:var(--text);
-
     fill:none;
-
     stroke-width:2;
 }
 
@@ -256,10 +226,8 @@ body{
 .thumb{
     width:100%;
     aspect-ratio:16/9;
-
     background-size:cover;
     background-position:center;
-
     transition:transform .2s;
 }
 
@@ -275,15 +243,11 @@ body{
     position:absolute;
     top:8px;
     left:8px;
-
     background:red;
     color:white;
-
     font-size:10px;
     font-weight:bold;
-
     padding:4px 7px;
-
     border-radius:999px;
 }
 
@@ -303,25 +267,18 @@ body{
 
 .player-screen{
     display:none;
-
     position:fixed;
     inset:0;
-
     background:var(--bg);
-
     z-index:1000;
-
     overflow-y:auto;
 }
 
 .player-top{
     height:60px;
-
     border-bottom:1px solid var(--border);
-
     display:flex;
     align-items:center;
-
     padding:0 15px;
 }
 
@@ -329,44 +286,33 @@ body{
     display:flex;
     align-items:center;
     gap:8px;
-
     background:none;
     border:none;
-
     color:var(--text);
-
     cursor:pointer;
-
     font-size:15px;
 }
 
 .back-btn svg{
     width:22px;
     height:22px;
-
     stroke:currentColor;
     fill:none;
-
     stroke-width:2;
 }
 
 .player-layout{
     display:grid;
     grid-template-columns:1fr 380px;
-
     gap:24px;
-
     padding:20px;
 }
 
 .player-box{
     width:100%;
     aspect-ratio:16/9;
-
     background:black;
-
     border-radius:14px;
-
     overflow:hidden;
 }
 
@@ -406,19 +352,15 @@ body{
 .rec-card{
     display:flex;
     gap:10px;
-
     cursor:pointer;
 }
 
 .rec-thumb{
     width:168px;
     aspect-ratio:16/9;
-
     border-radius:10px;
-
     background-size:cover;
     background-position:center;
-
     flex-shrink:0;
 }
 
@@ -437,37 +379,24 @@ body{
 
 .settings{
     position:fixed;
-
     left:72px;
     top:60px;
-
     width:240px;
-
     background:var(--bg);
-
     border:1px solid var(--border);
-
     padding:14px;
-
     display:none;
-
     z-index:200;
 }
 
 .settings button{
     width:100%;
     height:42px;
-
     border:none;
-
     background:var(--card);
-
     color:var(--text);
-
     border-radius:10px;
-
     margin-bottom:10px;
-
     cursor:pointer;
 }
 
@@ -500,8 +429,6 @@ body{
 </style>
 </head>
 <body>
-
-<!-- SIDEBAR -->
 
 <div class="sidebar">
 
@@ -547,8 +474,6 @@ body{
 
 </div>
 
-<!-- SETTINGS -->
-
 <div class="settings" id="settings">
 
     <button onclick="toggleTheme()">
@@ -561,11 +486,7 @@ body{
 
 </div>
 
-<!-- MAIN -->
-
 <div class="main">
-
-    <!-- TOPBAR -->
 
     <div class="topbar">
 
@@ -593,11 +514,7 @@ body{
 
     </div>
 
-    <!-- CONTENT -->
-
     <div class="content">
-
-        <!-- VIDEOS -->
 
         <div class="section" id="videosSection">
 
@@ -605,17 +522,9 @@ body{
                 <h2>Videos</h2>
             </div>
 
-            <div class="grid" id="videosGrid">
-
-                <div style="color:#aaa;">
-                    Cargando videos...
-                </div>
-
-            </div>
+            <div class="grid" id="videosGrid"></div>
 
         </div>
-
-        <!-- SHORTS -->
 
         <div class="section" id="shortsSection">
 
@@ -623,21 +532,13 @@ body{
                 <h2>Shorts</h2>
             </div>
 
-            <div class="grid shorts-grid" id="shortsGrid">
-
-                <div style="color:#aaa;">
-                    Cargando shorts...
-                </div>
-
-            </div>
+            <div class="grid shorts-grid" id="shortsGrid"></div>
 
         </div>
 
     </div>
 
 </div>
-
-<!-- PLAYER -->
 
 <div class="player-screen" id="playerScreen">
 
@@ -685,63 +586,27 @@ body{
 
 </div>
 
+<script src="LinkVideo.js"></script>
+
 <script>
 
-/* ========================================
-LINKS DESDE LINKVIDEO.HTML
-======================================== */
+const rawItems = window.CGTubeLinks || [];
 
-let rawItems = [];
+const videosGrid =
+document.getElementById("videosGrid");
+
+const shortsGrid =
+document.getElementById("shortsGrid");
+
 let library = [];
 
-function loadRawLinks(){
-
-const saved =
-JSON.parse(
-localStorage.getItem("CGTubeLinks") || "[]"
-);
-
-const list =
-Array.isArray(saved)
-? saved
-: [];
-
-return [
-
-...new Set(
-
-list
-.map(link => String(link || "").trim())
-.filter(Boolean)
-
-)
-
-];
-
-}
-
-/* ========================================
-VIDEO ID
-======================================== */
-
 function getVideoId(url){
-
-try{
-
-const parsed = new URL(url);
-
-if(parsed.searchParams.get("v")){
-
-return parsed.searchParams.get("v");
-
-}
 
 if(url.includes("youtu.be/")){
 
 return url
 .split("youtu.be/")[1]
-.split("?")[0]
-.split("&")[0];
+.split("?")[0];
 
 }
 
@@ -749,20 +614,13 @@ if(url.includes("/shorts/")){
 
 return url
 .split("/shorts/")[1]
-.split("?")[0]
-.split("&")[0];
+.split("?")[0];
 
 }
-
-}catch(e){}
 
 return null;
 
 }
-
-/* ========================================
-SHORTS
-======================================== */
 
 function isShort(url){
 
@@ -770,101 +628,66 @@ return url.includes("/shorts/");
 
 }
 
-/* ========================================
-FETCH VIDEO
-======================================== */
-
-async function fetchVideo(url){
+function createVideo(url){
 
 const id = getVideoId(url);
 
-if(!id) return null;
+if(!id) return;
 
 const type =
 isShort(url)
 ? "short"
 : "video";
 
-let title =
-"Video de YouTube";
-
-let channel =
-"Canal de YouTube";
-
-try{
-
-const response =
-await fetch(
-`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
-);
-
-if(response.ok){
-
-const data =
-await response.json();
-
-if(data.title){
-title = data.title;
-}
-
-if(data.author_name){
-channel = data.author_name;
-}
-
-}
-
-}catch(e){}
-
-return{
+const data = {
 
 id,
-title,
-channel,
 type,
+
+title:"Video de YouTube",
+
+channel:"Canal de YouTube",
 
 thumb:
 `https://img.youtube.com/vi/${id}/hqdefault.jpg`
 
 };
 
-}
-
-/* ========================================
-LOAD
-======================================== */
-
-async function load(){
-
-rawItems = loadRawLinks();
-
-library = [];
-
-for(const item of rawItems){
-
-const data =
-await fetchVideo(item);
-
-if(data){
 library.push(data);
-}
+
+renderCard(data);
+
+fetch(
+`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
+)
+
+.then(res => res.json())
+
+.then(info => {
+
+data.title =
+info.title || data.title;
+
+data.channel =
+info.author_name || data.channel;
+
+updateCards();
+
+})
+
+.catch(() => {});
 
 }
 
-render();
+function renderCard(video){
 
-}
+const card = document.createElement("div");
 
-/* ========================================
-CARD
-======================================== */
+card.className = "card";
 
-function cardHTML(video){
+card.dataset.id = video.id;
 
-return `
-
-<div
-class="card"
-onclick="playVideo('${video.id}')">
+card.innerHTML = `
 
 <div class="thumb-wrap">
 
@@ -885,49 +708,48 @@ ${video.type === "short"
 
 <p>${video.channel}</p>
 
-</div>
-
 `;
 
-}
+card.onclick = () => {
 
-/* ========================================
-RENDER
-======================================== */
+playVideo(video.id);
 
-function render(){
+};
 
-const videos =
-library.filter(v => v.type === "video");
+if(video.type === "short"){
 
-const shorts =
-library.filter(v => v.type === "short");
+shortsGrid.appendChild(card);
 
-document.getElementById(
-"videosGrid"
-).innerHTML =
+}else{
 
-videos.length
-? videos.map(cardHTML).join("")
-: `<div style="color:#aaa;">
-No hay videos.
-</div>`;
-
-document.getElementById(
-"shortsGrid"
-).innerHTML =
-
-shorts.length
-? shorts.map(cardHTML).join("")
-: `<div style="color:#aaa;">
-No hay shorts.
-</div>`;
+videosGrid.appendChild(card);
 
 }
 
-/* ========================================
-PLAY
-======================================== */
+}
+
+function updateCards(){
+
+document
+.querySelectorAll(".card")
+.forEach(card => {
+
+const id = card.dataset.id;
+
+const video =
+library.find(v => v.id === id);
+
+if(!video) return;
+
+card.querySelector("h3").innerText =
+video.title;
+
+card.querySelector("p").innerText =
+video.channel;
+
+});
+
+}
 
 function playVideo(id){
 
@@ -939,6 +761,21 @@ if(!item) return;
 document.getElementById(
 "playerScreen"
 ).style.display = "block";
+
+document.getElementById(
+"player"
+).src =
+`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+
+document.getElementById(
+"videoTitle"
+).innerText =
+item.title;
+
+document.getElementById(
+"videoChannel"
+).innerText =
+item.channel;
 
 const playerBox =
 document.getElementById(
@@ -955,29 +792,9 @@ playerBox.classList.remove("short");
 
 }
 
-document.getElementById(
-"player"
-).src =
-
-`https://www.youtube.com/embed/${item.id}?autoplay=1&rel=0`;
-
-document.getElementById(
-"videoTitle"
-).innerText =
-item.title;
-
-document.getElementById(
-"videoChannel"
-).innerText =
-item.channel;
-
 loadRecommended(id);
 
 }
-
-/* ========================================
-CLOSE
-======================================== */
 
 function closePlayer(){
 
@@ -990,10 +807,6 @@ document.getElementById(
 ).src = "";
 
 }
-
-/* ========================================
-RECOMMENDED
-======================================== */
 
 function loadRecommended(current){
 
@@ -1039,10 +852,6 @@ background-image:url('${video.thumb}')
 
 }
 
-/* ========================================
-SETTINGS
-======================================== */
-
 function toggleSettings(){
 
 const settings =
@@ -1058,10 +867,6 @@ settings.style.display === "block"
 
 }
 
-/* ========================================
-THEME
-======================================== */
-
 function toggleTheme(){
 
 document.body.classList.toggle(
@@ -1069,10 +874,6 @@ document.body.classList.toggle(
 );
 
 }
-
-/* ========================================
-SHORT RANDOM
-======================================== */
 
 function randomShort(){
 
@@ -1098,10 +899,6 @@ playVideo(random.id);
 
 }
 
-/* ========================================
-SECTIONS
-======================================== */
-
 function showHome(){
 
 document.getElementById(
@@ -1126,10 +923,6 @@ document.getElementById(
 
 }
 
-/* ========================================
-SEARCH
-======================================== */
-
 document
 .getElementById("searchInput")
 .addEventListener("input", function(){
@@ -1153,14 +946,7 @@ text.includes(value)
 
 });
 
-/* ========================================
-START
-======================================== */
-
-window.addEventListener(
-"load",
-load
-);
+rawItems.forEach(createVideo);
 
 </script>
 
