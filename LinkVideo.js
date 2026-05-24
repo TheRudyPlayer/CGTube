@@ -118,6 +118,8 @@ window.CGTubeLinks = [
 "https://youtu.be/H1mD1MnVej0",
 "https://youtu.be/sV0kGvV9e8o",
 "https://youtu.be/a4OWl188EKA",
-"https://youtu.be/oTUQcQTUY8g"
+"https://youtu.be/oTUQcQTUY8g",
+"https://youtube.com/shorts/1WXZ_QJsPeg",
+"https://youtube.com/shorts/RJQowIaoz_k"
 
 ];
