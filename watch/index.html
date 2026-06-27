@@ -892,7 +892,7 @@ library.filter(v => v.id !== current);
 shuffleArray(recommendedVideos);
 
 recommendedVideos
-.slice(0,12)
+.slice(0,6)
 .forEach(video => {
 
 recommended.innerHTML += `
@@ -1041,7 +1041,17 @@ await createVideo(item);
 
 }
 
-start();
+start().then(() => {
+
+const id = new URLSearchParams(location.search).get("v");
+
+if(id){
+
+playVideo(id);
+
+}
+
+});
 
 </script>
 
