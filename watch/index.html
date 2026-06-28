@@ -754,53 +754,62 @@ fetch(
 
 async function playVideo(id){
 
-/* VIDEO EMBED */
 document.getElementById("player").src =
 `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
 
-/* loading UI */
 document.getElementById("videoTitle").innerText = "Cargando...";
 document.getElementById("videoChannel").innerText = "Cargando...";
 document.getElementById("channelIcon").src = "./images/default_channel.png";
 
 try {
 
-const res = await fetch(
+const infoRes = await fetch(
 `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
 );
 
-const info = await res.json();
+const info = await infoRes.json();
 
 document.getElementById("videoTitle").innerText =
 info.title || "Sin título";
 
 document.getElementById("videoChannel").innerText =
-info.author_name || "Canal desconocido";
+info.author_name || "Canal";
 
-const icon =
-info.author_url
-? `https://www.google.com/s2/favicons?sz=128&domain=${new URL(info.author_url).hostname}`
-: "./images/default_channel.png";
+const xmlRes = await fetch(
+`https://www.youtube.com/feeds/videos.xml?video_id=${id}`
+);
 
-document.getElementById("channelIcon").src = icon;
+const xmlText = await xmlRes.text();
 
-} catch (e) {
+const channelIdMatch = xmlText.match(/channelId>(.*?)<\/yt:channelId>/);
 
-document.getElementById("videoTitle").innerText = "Error cargando video";
-document.getElementById("videoChannel").innerText = "Desconocido";
+if(channelIdMatch){
+
+const channelId = channelIdMatch[1];
+
+const avatar =
+`https://yt3.ggpht.com/ytc/${channelId}=s88-c-k-c0x00ffffff-no-rj`;
+
+document.getElementById("channelIcon").src = avatar;
 
 }
 
+} catch (e) {
+
+document.getElementById("videoChannel").innerText = "Canal desconocido";
+
+}
+
+const item = library.find(v => v.id === id);
 const playerBox = document.getElementById("playerBox");
 
-if(library.find(v => v.id === id)?.type === "short"){
+if(item?.type === "short"){
 playerBox.classList.add("short");
 }else{
 playerBox.classList.remove("short");
 }
 
 loadRecommended(id);
-
 history.replaceState({}, "", `?v=${id}`);
 }
 
