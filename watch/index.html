@@ -704,16 +704,15 @@ fetch(
 .then(res => res.json())
 .then(info => {
 
-data.title = info.title || "Video de YouTube";
-data.channel = info.author_name || "Canal de YouTube";
+    data.title = info.title || data.title;
+    data.channel = info.author_name || data.channel;
 
-const current = new URLSearchParams(location.search).get("v");
+    data.channelIcon =
+    info.author_url
+    ? `https://www.google.com/s2/favicons?sz=128&domain=${new URL(info.author_url).hostname}`
+    : "./images/default_channel.png";
 
-if(current === data.id){
-    document.getElementById("videoTitle").textContent = data.title;
-}
-
-loadRecommended(current);
+    updateCards();
 
 })
 .catch(() => {});
