@@ -982,9 +982,14 @@ settings.style.display === "block"
 
 function toggleTheme(){
 
-document.body.classList.toggle(
-"light"
-);
+    document.body.classList.toggle("light");
+
+    localStorage.setItem(
+        "CGTubeTheme",
+        document.body.classList.contains("light")
+        ? "light"
+        : "dark"
+    );
 
 }
 
@@ -1060,6 +1065,12 @@ card.style.display =
 text.includes(value)
 ? "block"
 : "none";
+
+const savedTheme = localStorage.getItem("CGTubeTheme");
+
+if(savedTheme === "light"){
+    document.body.classList.add("light");
+}
 
 });
 
