@@ -754,49 +754,56 @@ fetch(
 
 async function playVideo(id){
 
-document.getElementById("player").src =
-`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+const player = document.getElementById("player");
+const titleEl = document.getElementById("videoTitle");
+const channelEl = document.getElementById("videoChannel");
+const iconEl = document.getElementById("channelIcon");
 
-document.getElementById("videoTitle").innerText = "Cargando...";
-document.getElementById("videoChannel").innerText = "Cargando...";
-document.getElementById("channelIcon").src = "./images/default_channel.png";
+player.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+titleEl.innerText = "Cargando...";
+channelEl.innerText = "Cargando...";
+iconEl.src = "./images/default_channel.png";
+
+let channelId = null;
 
 try {
 
-const infoRes = await fetch(
+const res = await fetch(
 `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
 );
 
-const info = await infoRes.json();
+const info = await res.json();
 
-document.getElementById("videoTitle").innerText =
-info.title || "Sin título";
+const title = info.title;
+const channelName = info.author_name;
 
-document.getElementById("videoChannel").innerText =
-info.author_name || "Canal";
+if(title) titleEl.innerText = title;
+if(channelName) channelEl.innerText = channelName;
 
 const xmlRes = await fetch(
 `https://www.youtube.com/feeds/videos.xml?video_id=${id}`
 );
 
-const xmlText = await xmlRes.text();
+const xml = await xmlRes.text();
 
-const channelIdMatch = xmlText.match(/channelId>(.*?)<\/yt:channelId>/);
+const match = xml.match(/<yt:channelId>(.*?)<\/yt:channelId>/);
 
-if(channelIdMatch){
+if(match && match[1]){
+channelId = match[1];
+}
 
-const channelId = channelIdMatch[1];
+if(channelId){
 
-const avatar =
+iconEl.src =
 `https://yt3.ggpht.com/ytc/${channelId}=s88-c-k-c0x00ffffff-no-rj`;
-
-document.getElementById("channelIcon").src = avatar;
 
 }
 
 } catch (e) {
 
-document.getElementById("videoChannel").innerText = "Canal desconocido";
+if(channelEl.innerText === "Cargando..."){
+channelEl.innerText = "Canal desconocido";
+}
 
 }
 
@@ -810,8 +817,9 @@ playerBox.classList.remove("short");
 }
 
 loadRecommended(id);
+
 history.replaceState({}, "", `?v=${id}`);
-}
+    }
 
 /* CLOSE */
 
