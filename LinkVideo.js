@@ -46,7 +46,6 @@ window.CGTubeLinks = [
 "https://youtu.be/pAdICtH0rdI",
 "https://youtu.be/_uwxQJ6KH2Y",
 "https://youtu.be/K4v_N0VPJFA",
-"https://youtu.be/bqenfzRAz1k",
 "https://youtu.be/_2i7JU9iGOM",
 "https://youtu.be/Vw1W_5exiRw",
 "https://youtu.be/2kS7SP3uBSk",
