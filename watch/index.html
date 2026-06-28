@@ -435,7 +435,7 @@ body{
 <div class="sidebar">
 
 <div class="sidebar-logo">
-<img src="./images/chickenguntube_weblogo.png">
+<img src="../images/chickenguntube_weblogo.png">
 </div>
 
 <button class="nav-btn" onclick="showHome()">
@@ -493,7 +493,7 @@ Short aleatorio
 <div class="topbar">
 
 <div class="brand">
-<img src="./images/chickentube_logo.png">
+<img src="../images/chickentube_logo.png">
 </div>
 
 <div class="search">
@@ -552,17 +552,11 @@ Cargando...
 
 </div>
 
-<script src="./LinkVideo.js"></script>
+<script src="../LinkVideo.js"></script>
 
 <script>
 
 const rawItems = [...(window.CGTubeLinks || [])];
-
-const videosGrid =
-document.getElementById("videosGrid");
-
-const shortsGrid =
-document.getElementById("shortsGrid");
 
 let library = [];
 
@@ -697,8 +691,6 @@ thumb:
 };
 
 library.push(data);
-
-renderCard(data);
 
 fetch(
 `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
@@ -973,32 +965,6 @@ Math.random() * shorts.length
 ];
 
 playVideo(random.id);
-
-}
-
-/* SECTIONS */
-
-function showHome(){
-
-document.getElementById(
-"videosSection"
-).style.display = "block";
-
-document.getElementById(
-"shortsSection"
-).style.display = "block";
-
-}
-
-function showShorts(){
-
-document.getElementById(
-"videosSection"
-).style.display = "none";
-
-document.getElementById(
-"shortsSection"
-).style.display = "block";
 
 }
 
