@@ -824,10 +824,6 @@ library.find(v => v.id === id);
 if(!item) return;
 
 document.getElementById(
-"playerScreen"
-).style.display = "block";
-
-document.getElementById(
 "player"
 ).src =
 `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
@@ -858,6 +854,8 @@ playerBox.classList.remove("short");
 }
 
 loadRecommended(id);
+
+    history.replaceState({}, "", `?v=${id}`);
 
 }
 
