@@ -11,7 +11,7 @@ const CGTubeChannels = [
     id: "UC5aLmBd_aN34pcpjTxjvEPw",
     handle: "@JrCrackOficial",
     name: "J.R Crack",
-    icon: "https://yt3.googleusercontent.com/6La7cnBuqVzQX_Jpm4MgBiqdDayg5lWs2B4tBKYMN2JKBgWK_LTL0xTtWKcJW2Oy4sZtJDhqFA=s160-c-k-c0x00ffffff-no-rj"
+    icon: "https://i.postimg.cc/9QRfXYmq/channels4-profile-(10).jpg"
 },
 
 {
