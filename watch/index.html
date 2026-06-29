@@ -584,6 +584,7 @@ Cargando...
 </div>
 
 <script src="../LinkVideo.js"></script>
+<script src="../LinkChannel.js"></script>
 
 <script>
 
@@ -797,11 +798,12 @@ if(match && match[1]){
 channelId = match[1];
 }
 
-if(channelId){
+const item = library.find(v => v.id === id);
 
-iconEl.src =
-`https://yt3.ggpht.com/ytc/${channelId}=s88-c-k-c0x00ffffff-no-rj`;
-
+if(item){
+    titleEl.innerText = item.title;
+    channelEl.innerText = item.channel;
+    iconEl.src = item.channelIcon || "./images/default_channel.png";
 }
 
 } catch (e) {
