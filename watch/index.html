@@ -811,7 +811,9 @@ iconEl.src = channelIcon || "./images/default_channel.png";
 
 item.title = title;
 item.channel = channelName;
-item.channelIcon = channelIcon;
+if(channelIcon){
+    item.channelIcon = channelIcon;
+}
 
 } catch (e) {
     channelEl.innerText = item.channel || "Canal desconocido";
