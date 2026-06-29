@@ -799,13 +799,19 @@ if(match && match[1]){
 channelId = match[1];
 }
 
-const item = library.find(v => v.id === id);
+let item = library.find(v => v.id === id);
 
-if(item){
-    titleEl.innerText = item.title;
-    channelEl.innerText = item.channel;
-    iconEl.src = item.channelIcon || "./images/default_channel.png";
+if(!item.channelIcon){
+
+    while(!item.channelIcon){
+        await new Promise(r => setTimeout(r,100));
+    }
+
 }
+
+titleEl.innerText = item.title;
+channelEl.innerText = item.channel;
+iconEl.src = item.channelIcon;
 
 } catch (e) {
 
