@@ -46,7 +46,7 @@ const CGTubeChannels = [
     id: "UCTMLCdhi2bbhv1IKLR5ZGPQ",
     handle: "@stifflxr",
     name: "STIFF LXR",
-    icon: "https://i.postimg.cc/m2jQvc8H/channels4-profile-(26).jpg",
+    icon: "https://i.postimg.cc/Zq8YQNLb/57-sin-titulo-20260629151052.png",
     verified: true,
     banner: ""
 }
