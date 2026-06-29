@@ -25,6 +25,69 @@ body{
     font-family:Arial,sans-serif;
 }
 
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:72px;
+    height:100vh;
+    background:var(--bg);
+    border-right:1px solid var(--border);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    z-index:100;
+}
+
+.sidebar-logo{
+    width:100%;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.sidebar-logo img{
+    width:48px;
+    height:48px;
+}
+
+.nav-btn{
+    width:64px;
+    height:74px;
+    border:none;
+    background:none;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.nav-btn:hover{
+    background:#272727;
+}
+
+.nav-btn svg{
+    width:24px;
+    height:24px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:2;
+}
+
+.nav-btn span{
+    font-size:10px;
+}
+
+.main{
+    margin-left:72px;
+}
+
 .banner{
     width:100%;
     height:220px;
@@ -87,6 +150,39 @@ body{
 
 <body>
 
+<div class="sidebar">
+
+<div class="sidebar-logo" onclick="history.back()">
+    <img src="../images/chickenguntube_weblogo.png">
+</div>
+
+<button class="nav-btn"
+onclick="location.href='/ChickenGunTube/'">
+
+<svg viewBox="0 0 24 24">
+<path d="M3 10L12 3L21 10"></path>
+<path d="M5 9V20H19V9"></path>
+</svg>
+
+<span>Inicio</span>
+
+</button>
+
+<button class="nav-btn"
+onclick="history.back()">
+
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"></path>
+</svg>
+
+<span>Volver</span>
+
+</button>
+
+</div>
+
+<div class="main">
+
 <div class="banner">
     <img id="banner">
 </div>
@@ -138,5 +234,6 @@ class="videos">
 
 </script>
 
+</div>
 </body>
 </html>
