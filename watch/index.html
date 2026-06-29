@@ -748,28 +748,6 @@ if(channel){
     data.channelIcon = channel.icon;
 }
 
-    let channelUrl = info.author_url || null;
-
-if(channelUrl){
-
-try {
-const domain = new URL(channelUrl).hostname;
-
-data.channelIcon =
-`https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
-
-} catch(e){
-
-data.channelIcon = "./images/default_channel.png";
-
-}
-
-}else{
-
-data.channelIcon = "./images/default_channel.png";
-
-}
-
     updateCards();
 
 })
