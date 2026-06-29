@@ -10,7 +10,7 @@ const CGTubeChannels = [
 {
     id: "UC5aLmBd_aN34pcpjTxjvEPw",
     handle: "@JrCrackOficial",
-    name: "J.R Crack",
+    name: "J.R CRACK",
     icon: "https://i.postimg.cc/9QRfXYmq/channels4-profile-(10).jpg"
 },
 
