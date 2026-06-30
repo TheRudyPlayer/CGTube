@@ -1,117 +1,488 @@
-/*
-========================================
-CGTube Links
-========================================
-
-SOLO LINKS.
-SIN INTERFAZ.
-SIN HTML.
-
-index.html leerá automáticamente:
-window.CGTubeLinks
-
-========================================
-*/
-
 window.CGTubeLinks = [
 
-/* VIDEOS */
+{
+    url: "https://youtu.be/_hdKjo5NR40",
+    channelId: ""
+},
 
-"https://youtu.be/_hdKjo5NR40",
-"https://youtu.be/m3M-RwZebEk",
-"https://youtu.be/fZbO_Tw-o3Q",
-"https://youtu.be/_Qu03z4z9gY",
-"https://youtu.be/K5-OkvRmPR0",
-"https://youtu.be/UqZff8U7ccg",
-"https://youtu.be/cGpKTx35maM",
-"https://youtu.be/jUUGSuCHJbg",
-"https://youtu.be/NY8sJ0eSC-w",
-"https://youtu.be/zl1oLKIbEvE",
-"https://youtu.be/FCJ9hZnFrTo",
-"https://youtu.be/PFSxjgC2iTk",
-"https://youtu.be/s51MPbBYhLU",
-"https://youtu.be/ruYuZn4Pw64",
-"https://youtu.be/oRSi2adINes",
-"https://youtu.be/vfejXap4dpM",
-"https://youtu.be/i7shcD7dqx4",
-"https://youtu.be/J8EizXyANpU",
-"https://youtu.be/QesM1RNvqRU",
-"https://youtu.be/f-6J8iFeGtE",
-"https://youtu.be/d3fuW_TdQXQ",
-"https://youtu.be/s_geZlI4vOU",
-"https://youtu.be/iL3o0YUfVZU",
-"https://youtu.be/SB6t85igDaE",
-"https://youtu.be/_uwxQJ6KH2Y",
-"https://youtu.be/K4v_N0VPJFA",
-"https://youtu.be/_2i7JU9iGOM",
-"https://youtu.be/Vw1W_5exiRw",
-"https://youtu.be/2kS7SP3uBSk",
-"https://youtu.be/5Q59YDeV5sM",
-"https://youtu.be/AQV3cMZfhJo",
-"https://youtu.be/R6_kjcBeFpg",
-"https://youtu.be/kpuORHAk39w",
-"https://youtu.be/qaY5BHR9gmE",
-"https://youtu.be/3Y1JQKWhbp0",
-"https://youtu.be/S2ftuageELc",
-"https://youtu.be/fp4EbUAm600",
-"https://youtu.be/EjaVs-mQZs4",
-"https://youtu.be/ToZOhway8p8",
-"https://youtu.be/ia5oVfglWk4",
-"https://youtu.be/FFj9nj8Jo5Q",
-"https://youtu.be/QRanoZgVGXE",
-"https://youtu.be/vMsVTK04rig",
-"https://youtu.be/SOzU2WjVBT0",
-"https://youtu.be/PmpRDiCbvH8",
-"https://youtu.be/HOndOaM4x1I",
-"https://youtu.be/mZ4jG7wvDmE",
-"https://youtu.be/w4Kdn-Lr8pk",
-"https://youtu.be/qjQVertQLCo",
-"https://youtu.be/c34odL_Rn80",
-"https://youtu.be/XZrawdRI_kc",
-"https://youtu.be/Qi3riINB2SI",
-"https://youtu.be/-8XfPTKQORo",
-"https://youtu.be/fwFi5cXp-mc",
-"https://youtu.be/fOz_TY9vaJA",
-"https://youtu.be/UZIYZZZmDF0",
-"https://youtu.be/tcLvmRYfRBI",
-"https://youtu.be/P7XFYl7s-RM",
-"https://youtu.be/TlYL0nddHJg",
-"https://youtu.be/E39QlO7pk1c",
-"https://youtu.be/hXoBti37mZU",
-"https://youtu.be/IUz8mSOv0Ls",
-"https://youtu.be/8GQcLT_dJyE",
-"https://youtu.be/fnrWYd0FRJA",
-"https://youtu.be/txySDw0Av4Q",
-"https://youtu.be/ET6K1edREkI",
-"https://youtu.be/bMw4qvsLBqM",
-"https://youtu.be/ksQP2IfWR0A",
-"https://youtu.be/4VhKKZWiTfE",
-"https://youtu.be/-Z5hKjFxwzQ",
-"https://youtu.be/AbDKKXBRO2w",
-"https://youtu.be/IW-4q5JYd2M",
-"https://youtu.be/hIawHOiskKc",
-"https://youtu.be/sqiWkwnnkwI",
-"https://youtu.be/vSn_r6AlWm4",
-"https://youtu.be/INLE9Bdap54",
-"https://youtu.be/EO_NXLRRdXY",
-"https://youtu.be/QuedTnKAsr4",
-"https://youtu.be/T3k0B6Cd3aw",
-"https://youtu.be/HfVEri7n524",
-"https://youtu.be/cIlqhVa6TlQ",
-"https://youtu.be/Je4VQFQ9eTE",
-"https://youtu.be/2uHEQ1eAKv0",
-"https://youtu.be/F-RVJjQS12U",
-"https://youtu.be/9hSvoW8mshY",
-"https://youtu.be/Fb4M71TGzNI",
-"https://youtu.be/6baa-e0FQHs",
-"https://youtu.be/_uBYTRfJ_zY",
-"https://youtu.be/O2YA8BabAvU",
-"https://youtu.be/l-65Rbcckz4",
-"https://youtu.be/vY_Wme_0OMM",
-"https://youtu.be/ZjzfGUUAeik",
-"https://youtu.be/N2-Br0qCPF8",
-"https://youtu.be/H1mD1MnVej0",
-"https://youtu.be/sV0kGvV9e8o",
-"https://youtu.be/a4OWl188EKA",
-"https://youtu.be/oTUQcQTUY8g"
+{
+    url: "https://youtu.be/m3M-RwZebEk",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/fZbO_Tw-o3Q",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/_Qu03z4z9gY",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/K5-OkvRmPR0",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/UqZff8U7ccg",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/cGpKTx35maM",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/jUUGSuCHJbg",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/NY8sJ0eSC-w",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/zl1oLKIbEvE",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/FCJ9hZnFrTo",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/PFSxjgC2iTk",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/s51MPbBYhLU",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/ruYuZn4Pw64",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/oRSi2adINes",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/vfejXap4dpM",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/i7shcD7dqx4",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/J8EizXyANpU",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/QesM1RNvqRU",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/f-6J8iFeGtE",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/d3fuW_TdQXQ",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/s_geZlI4vOU",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/iL3o0YUfVZU",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/SB6t85igDaE",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/_uwxQJ6KH2Y",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/K4v_N0VPJFA",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/_2i7JU9iGOM",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/Vw1W_5exiRw",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/2kS7SP3uBSk",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/5Q59YDeV5sM",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/AQV3cMZfhJo",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/R6_kjcBeFpg",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/kpuORHAk39w",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/qaY5BHR9gmE",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/3Y1JQKWhbp0",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/S2ftuageELc",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/fp4EbUAm600",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/EjaVs-mQZs4",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/ToZOhway8p8",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/ia5oVfglWk4",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/FFj9nj8Jo5Q",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/QRanoZgVGXE",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/vMsVTK04rig",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/SOzU2WjVBT0",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/PmpRDiCbvH8",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/HOndOaM4x1I",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/mZ4jG7wvDmE",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/w4Kdn-Lr8pk",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/qjQVertQLCo",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/c34odL_Rn80",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/XZrawdRI_kc",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/Qi3riINB2SI",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/-8XfPTKQORo",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/fwFi5cXp-mc",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/fOz_TY9vaJA",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/UZIYZZZmDF0",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/tcLvmRYfRBI",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/P7XFYl7s-RM",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/TlYL0nddHJg",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/E39QlO7pk1c",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/hXoBti37mZU",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/IUz8mSOv0Ls",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/8GQcLT_dJyE",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/fnrWYd0FRJA",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/txySDw0Av4Q",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/ET6K1edREkI",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/bMw4qvsLBqM",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/ksQP2IfWR0A",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/4VhKKZWiTfE",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/-Z5hKjFxwzQ",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/AbDKKXBRO2w",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/IW-4q5JYd2M",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/hIawHOiskKc",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/sqiWkwnnkwI",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/vSn_r6AlWm4",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/INLE9Bdap54",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/EO_NXLRRdXY",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/QuedTnKAsr4",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/T3k0B6Cd3aw",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/HfVEri7n524",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/cIlqhVa6TlQ",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/Je4VQFQ9eTE",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/2uHEQ1eAKv0",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/F-RVJjQS12U",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/9hSvoW8mshY",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/Fb4M71TGzNI",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/6baa-e0FQHs",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/_uBYTRfJ_zY",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/O2YA8BabAvU",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/l-65Rbcckz4",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/vY_Wme_0OMM",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/ZjzfGUUAeik",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/N2-Br0qCPF8",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/H1mD1MnVej0",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/sV0kGvV9e8o",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/a4OWl188EKA",
+    channelId: ""
+},
+
+{
+    url: "https://youtu.be/oTUQcQTUY8g",
+    channelId: ""
+}
+
 ];
