@@ -702,69 +702,70 @@ img.src =
 async function createVideo(url){
 
 const id = getVideoId(url);
-
 if(!id) return;
 
-const type =
-isShort(url)
-? "short"
-: "video";
+const type = isShort(url) ? "short" : "video";
 
 let shortFormat = "vertical";
 
 if(type === "short"){
-
-shortFormat =
-await getShortFormat(id);
-
+    shortFormat = await getShortFormat(id);
 }
 
 const data = {
-
-id,
-type,
-shortFormat,
-
-title:"Video de YouTube",
-
-channel:"Canal de YouTube",
-
-thumb:
-`https://img.youtube.com/vi/${id}/hqdefault.jpg`
-
+    id,
+    type,
+    shortFormat,
+    title:"Video de YouTube",
+    channel:"Canal de YouTube",
+    thumb:`https://img.youtube.com/vi/${id}/hqdefault.jpg`
 };
 
 library.push(data);
 
-fetch(
+try {
+
+const res = await fetch(
 `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
-)
-.then(res => res.json())
-.then(info => {
-
-    data.title = info.title || data.title;
-    data.channel = info.author_name || data.channel;
-
-    const channel = CGTubeChannels.find(c =>
-    data.channel.toLowerCase().includes(c.name.toLowerCase()) ||
-    c.name.toLowerCase().includes(data.channel.toLowerCase())
 );
 
-if(channel){
-    data.channelId = channel.id;
-    data.channelHandle = channel.handle;
-    data.channelIcon = channel.icon;
-    data.channelBanner = channel.banner;
-    data.channelVerified = channel.verified;
+const info = await res.json();
+
+data.title = info.title || data.title;
+data.channel = info.author_name || data.channel;
+
+/* ARREGLO DE CANALES */
+const channelList = window.CGTubeChannels;
+
+if (Array.isArray(channelList) && data.channel) {
+
+    const videoName = data.channel.toLowerCase().trim();
+
+    const channel = channelList.find(c => {
+        if (!c?.name) return false;
+
+        const dbName = c.name.toLowerCase().trim();
+
+        return videoName.includes(dbName) || dbName.includes(videoName);
+    });
+
+    if (channel) {
+        data.channelId = channel.id;
+        data.channelHandle = channel.handle;
+        data.channelIcon = channel.icon;
+        data.channelBanner = channel.banner;
+        data.channelVerified = channel.verified;
+    }
 }
 
-    updateCards();
+updateCards?.();
 
-})
-.catch(() => {});
-
+} catch (e) {
+    console.log("Error en createVideo:", e);
 }
 
+}
+    
 /* PLAY */
 
 async function playVideo(id){
