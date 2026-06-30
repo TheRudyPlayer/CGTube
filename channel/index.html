@@ -318,7 +318,7 @@ document.body.classList.contains("light")
     // aqui empieza el sistema
 const channelId=new URLSearchParams(location.search).get("id");
 
-const channel=CGTubeChannels.find(c=>c.id===channelId);
+const channel = window.CGTubeChannels.find(c => c.id === channelId);
 
 if(!channel){
 document.getElementById("videos").innerHTML="<h2>Canal no encontrado</h2>";
