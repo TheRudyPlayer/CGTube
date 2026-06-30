@@ -316,26 +316,29 @@ document.body.classList.contains("light")
 }
 
     // aqui empieza el sistema
-    const channelId=new URLSearchParams(location.search).get("id");
+    const channelId = new URLSearchParams(location.search).get("id");
 
-const channel=CGTubeChannels.find(c=>c.id===channelId);
+const channel = CGTubeChannels.find(c => c.id === channelId);
 
 if(!channel){
-document.body.innerHTML="<h1 style='padding:40px'>Canal no encontrado</h1>";
-throw new Error("Canal no encontrado");
-}
+    document.getElementById("videos").innerHTML = "Canal no encontrado";
+}else{
 
-document.title=channel.name+" - CGTube";
+document.title = channel.name + " - CGTube";
 
-document.getElementById("name").textContent=channel.name;
-document.getElementById("handle").textContent=channel.handle;
-document.getElementById("icon").src=channel.icon;
-document.getElementById("banner").src=channel.banner||"https://placehold.co/1200x220";
+name.textContent = channel.name;
+handle.textContent = channel.handle;
+icon.src = channel.icon;
+banner.src = channel.banner || "";
 
-const channelVideos=CGTubeLinks.filter(v=>v.channelId===channel.id);
+const videos = CGTubeLinks.filter(v => v.channelId === channelId);
+
+videos.innerHTML = "";
 
 document.getElementById("videos").innerHTML =
-"Videos encontrados: " + channelVideos.length;
+"Videos encontrados: " + videos.length;
+
+}
 
 </script>
 
