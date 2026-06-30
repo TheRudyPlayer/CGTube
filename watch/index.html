@@ -551,7 +551,7 @@ Cargando...
 
 <div style="display:flex;align-items:center;gap:10px;margin-top:8px;">
     <img id="channelIcon"
-     src="./images/default_channel.png"
+     src="https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png"
      style="
      width:32px;
      height:32px;
@@ -805,12 +805,19 @@ document.title = `${title} - CGTube`;
 // buscar icono desde tu lista
 let channelIcon = item.channelIcon || null;
 
-if(!channelIcon && typeof CGTubeChannels !== "undefined"){
-    const channel = CGTubeChannels.find(c =>
-        channelName.toLowerCase().includes(c.name.toLowerCase())
-    );
+const channelList = window.CGTubeChannels || [];
 
-    if(channel){
+if (!channelIcon) {
+    const channel = channelList.find(c => {
+        if (!channelName || !c.name) return false;
+
+        const videoName = channelName.toLowerCase().trim();
+        const dbName = c.name.toLowerCase().trim();
+
+        return videoName.includes(dbName) || dbName.includes(videoName);
+    });
+
+    if (channel) {
         channelIcon = channel.icon;
     }
 }
@@ -987,8 +994,8 @@ document
 const value =
 this.value.toLowerCase();
 
-document
-.querySelectorAll(".card")
+const cards = document.querySelectorAll(".card");
+if(!cards.length) return;
 .forEach(card => {
 
 const text =
