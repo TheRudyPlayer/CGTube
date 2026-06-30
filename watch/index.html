@@ -991,20 +991,18 @@ playVideo(random.id);
 }
 
 /* SEARCH */
-
+    
 document
 .getElementById("searchInput")
 .addEventListener("input", function(){
 
-const value =
-this.value.toLowerCase();
+const value = this.value.toLowerCase();
 
 const cards = document.querySelectorAll(".card");
-if(!cards.length) return;
-.forEach(card => {
 
-const text =
-card.innerText.toLowerCase();
+cards.forEach(card => {
+
+const text = card.innerText.toLowerCase();
 
 card.style.display =
 text.includes(value)
