@@ -717,16 +717,22 @@ if(type === "short"){
     shortFormat = await getShortFormat(id);
 }
 
+const raw = rawItems.find(v => getVideoId(v.url) === id);
+
 const data = {
     id,
     type,
     shortFormat,
-    title:"Video de YouTube",
-    channel:"Canal de YouTube",
-    thumb:`https://img.youtube.com/vi/${id}/hqdefault.jpg`
+    title: raw?.title || "",
+    channelId: raw?.channelId || "",
+    thumb: `https://img.youtube.com/vi/${id}/hqdefault.jpg`
 };
 
 library.push(data);
+
+if (data.title) {
+    return;
+    }
 
 try {
 
@@ -790,6 +796,21 @@ let item = library.find(v => v.id === id);
 
 if(!item){
     console.log("Video no encontrado en library");
+    return;
+}
+
+if (item.title && item.channel) {
+
+    titleEl.innerText = item.title;
+    channelEl.innerText = item.channel;
+    document.title = `${item.title} - CGTube`;
+
+    if (item.channelIcon) {
+        iconEl.src = item.channelIcon;
+    }
+
+    loadRecommended(id);
+    history.replaceState({}, "", `?v=${id}`);
     return;
 }
 
