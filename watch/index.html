@@ -816,6 +816,26 @@ if (item.title) {
 
     }
 
+    const playerBox = document.getElementById("playerBox");
+
+if(item?.type === "short"){
+    playerBox.classList.add("short");
+}else{
+    playerBox.classList.remove("short");
+}
+
+channelEl.onclick = () => {
+    if(item.channelId){
+        location.href = `/ChickenGunTube/channel/?id=${item.channelId}`;
+    }
+};
+
+iconEl.onclick = () => {
+    if(item.channelId){
+        location.href = `/ChickenGunTube/channel/?id=${item.channelId}`;
+    }
+};
+
     loadRecommended(id);
     history.replaceState({}, "", `?v=${id}`);
     return;
