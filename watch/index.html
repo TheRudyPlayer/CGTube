@@ -719,7 +719,7 @@ if(type === "short"){
 
 const raw = rawItems.find(v => getVideoId(v.url) === id);
 
-const ch = window.CGTubeChannels.find(c => c.id === raw?.channelId);
+const ch = (window.CGTubeChannels || []).find(c => c.id === raw?.channelId);
 
 const data = {
     id,
@@ -750,7 +750,7 @@ data.title = info.title || data.title;
 data.channel = info.author_name || data.channel;
 
 /* ARREGLO DE CANALES */
-const channelList = window.CGTubeChannels;
+const channelList = window.CGTubeChannels || [];
 
 if (Array.isArray(channelList) && data.channel) {
 
@@ -810,7 +810,7 @@ if (item.title) {
 
     if (item.channelId) {
 
-        const ch = window.CGTubeChannels.find(c => c.id === item.channelId);
+        const ch = (window.CGTubeChannels || []).find(c => c.id === item.channelId);
 
         if (ch) {
             channelEl.innerText = ch.name;
@@ -863,7 +863,7 @@ document.title = `${title} - CGTube`;
 // buscar icono desde tu lista
 let channelIcon = item.channelIcon || null;
 
-const channelList = window.CGTubeChannels;
+const channelList = window.CGTubeChannels || [];
 
 if (!channelIcon && Array.isArray(channelList) && channelName) {
 
@@ -898,7 +898,7 @@ if(channelIcon){
 
 } catch (e) {
     if (item.channelId) {
-    const ch = window.CGTubeChannels.find(c => c.id === item.channelId);
+    const ch = (window.CGTubeChannels || []).find(c => c.id === item.channelId);
     channelEl.innerText = ch?.name || "Canal desconocido";
 } else {
     channelEl.innerText = item.channel || "Canal desconocido";
