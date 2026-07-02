@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGTube</title>
-    <link rel="icon" type="image/png" href="../images/chickenguntube_weblogo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGTube</title>
+<link rel="icon" type="image/png" href="../images/chickenguntube_weblogo.png">
 
-    <style>
+<style>
 
 :root{
     --bg:#0f0f0f;
@@ -40,10 +39,6 @@ body{
     color:var(--text);
     font-family:Arial, Helvetica, sans-serif;
     overflow-x:hidden;
-}
-
-.main{
-    min-height:100vh;
 }
 
 /* SIDEBAR */
@@ -109,6 +104,8 @@ body{
 .nav-btn span{
     font-size:10px;
 }
+
+/* MAIN */
 
 .main{
     margin-left:72px;
@@ -190,11 +187,128 @@ body{
     padding:20px;
 }
 
+.section{
+    margin-bottom:40px;
+}
+
+.section-header{
+    margin-bottom:18px;
+}
+
+.section-header h2{
+    font-size:22px;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:18px;
+}
+
+.shorts-grid{
+    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+}
+
+/* CARD */
+
+.card{
+    cursor:pointer;
+}
+
+.thumb-wrap{
+    overflow:hidden;
+    border-radius:14px;
+    position:relative;
+    background:#222;
+}
+
+.thumb{
+    width:100%;
+    aspect-ratio:16/9;
+    background-size:cover;
+    background-position:center;
+    transition:transform .2s;
+}
+
+.card:hover .thumb{
+    transform:scale(1.03);
+}
+
+.short-vertical .thumb{
+    aspect-ratio:9/16;
+}
+
+.short-square .thumb{
+    aspect-ratio:1/1;
+}
+
+.short-badge{
+    position:absolute;
+    top:8px;
+    left:8px;
+    background:red;
+    color:white;
+    font-size:10px;
+    font-weight:bold;
+    padding:4px 7px;
+    border-radius:999px;
+}
+
+.card h3{
+    margin-top:10px;
+    font-size:15px;
+    line-height:1.4;
+}
+
+.card p{
+    margin-top:4px;
+    color:var(--sub);
+    font-size:13px;
+}
+
 /* PLAYER */
+
+.player-screen{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:var(--bg);
+    z-index:1000;
+    overflow-y:auto;
+}
+
+.player-top{
+    height:60px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    padding:0 15px;
+}
+
+.back-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:none;
+    border:none;
+    color:var(--text);
+    cursor:pointer;
+    font-size:15px;
+}
+
+.back-btn svg{
+    width:22px;
+    height:22px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:2;
+}
 
 .player-layout{
     display:grid;
-    grid-template-columns:1fr 360px;
+    grid-template-columns: 1fr 360px;
     gap:24px;
     padding:20px;
     align-items:start;
@@ -219,16 +333,6 @@ body{
     border:none;
 }
 
-@media(max-width:1000px){
-
-.player-layout{
-    grid-template-columns:1fr;
-}
-
-}
-
-/* INFO DEL VIDEO */
-
 .video-info{
     margin-top:14px;
 }
@@ -238,33 +342,8 @@ body{
     line-height:1.4;
 }
 
-/* CANAL */
-
-.channel-box{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-top:12px;
-}
-
-.channel-box img{
-    width:36px;
-    height:36px;
-    border-radius:50%;
-    object-fit:cover;
-    background:var(--card);
-    cursor:pointer;
-}
-
-.channel-box h3{
-    font-size:14px;
-    color:var(--text);
-    cursor:pointer;
-}
-
-.channel-box p{
-    margin-top:4px;
-    font-size:12px;
+.video-info p{
+    margin-top:6px;
     color:var(--sub);
 }
 
@@ -301,192 +380,729 @@ body{
     font-size:12px;
     color:var(--sub);
 }
-        
-    </style>
-    
-</head>
 
+/* SETTINGS */
+
+.settings{
+    position:fixed;
+    left:72px;
+    top:60px;
+    width:240px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    padding:14px;
+    display:none;
+    z-index:200;
+}
+
+.settings button{
+    width:100%;
+    height:42px;
+    border:none;
+    background:var(--card);
+    color:var(--text);
+    border-radius:10px;
+    margin-bottom:10px;
+    cursor:pointer;
+
+}
+
+.channel-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:12px;
+}
+
+.channel-box img{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    object-fit:cover;
+    background:var(--card);
+}
+
+.channel-box h3{
+    font-size:14px;
+    color:var(--sub);
+}
+
+@media(max-width:1000px){
+
+.player-layout{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:700px){
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.shorts-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.search{
+    width:100%;
+}
+
+}
+
+</style>
+</head>
 <body>
 
-    <div class="sidebar">
+<div class="sidebar">
 
-    <div class="sidebar-logo" onclick="location.href='/ChickenGunTube/'" style="cursor:pointer;">
-        <img src="../images/chickenguntube_weblogo.png">
-    </div>
+<div class="sidebar-logo" onclick="location.href='/ChickenGunTube/'" style="cursor:pointer;">
+    <img src="../images/chickenguntube_weblogo.png">
+</div>
 
-    <button class="nav-btn" onclick="location.href='/ChickenGunTube/'">
+<button class="nav-btn" onclick="location.href='/ChickenGunTube/'">
 
-        <svg viewBox="0 0 24 24">
-            <path d="M3 10L12 3L21 10"></path>
-            <path d="M5 9V20H19V9"></path>
-        </svg>
+<svg viewBox="0 0 24 24">
+<path d="M3 10L12 3L21 10"></path>
+<path d="M5 9V20H19V9"></path>
+</svg>
 
-        <span>Inicio</span>
+<span>Inicio</span>
 
-    </button>
+</button>
 
-    </div>
+<button class="nav-btn" onclick="toggleSettings()">
 
-    <div class="main">
+<svg viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="3"></circle>
+<path d="M12 2V5"></path>
+<path d="M12 19V22"></path>
+<path d="M2 12H5"></path>
+<path d="M19 12H22"></path>
+</svg>
 
-    <div class="topbar">
+<span>Ajustes</span>
 
-    <div class="brand" onclick="location.href='/ChickenGunTube/'" style="cursor:pointer;">
-        <img src="../images/chickentube_logo.png">
-    </div>
+</button>
 
-    <div class="search">
+</div>
 
-        <input
-            type="text"
-            placeholder="Buscar">
+<div class="settings" id="settings">
 
-        <button>
+<button onclick="toggleTheme()">
+Cambiar tema
+</button>
 
-            <svg viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="7"></circle>
-                <path d="M20 20L17 17"></path>
-            </svg>
+<button onclick="randomShort()">
+Short aleatorio
+</button>
 
-        </button>
+</div>
 
-    </div>
+<div class="main">
 
-    </div>
+<div class="topbar">
 
-    <div class="content">
+<div class="brand" onclick="location.href='/ChickenGunTube/'" style="cursor:pointer;">
+    <img src="../images/chickentube_logo.png">
+</div>
 
-    <div class="player-layout">
+<div class="search">
 
-        <div>
+<input
+type="text"
+id="searchInput"
+placeholder="Buscar">
 
-            <div class="player-box" id="playerBox">
+<button>
 
-                <iframe
-                    id="player"
-                    allowfullscreen
-                    allow="autoplay">
-                </iframe>
+<svg viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="M20 20L17 17"></path>
+</svg>
 
-            </div>
+</button>
+
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="player-layout">
+
+<div>
+
+<div class="player-box" id="playerBox">
+
+<iframe
+id="player"
+allowfullscreen
+allow="autoplay">
+</iframe>
+
+</div>
 
 <div class="video-info">
 
-    <h2 id="videoTitle">
-        Cargando...
-    </h2>
+<h2 id="videoTitle">
+Cargando...
+</h2>
 
-    <div class="channel-box">
+<div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+    
+    <img id="channelIcon"
+     src="https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png"
+     style="
+     width:34px;
+     height:34px;
+     border-radius:50%;
+     object-fit:cover;
+     cursor:pointer;
+     ">
 
-        <img
-            id="channelIcon"
-            src="https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png">
+    <div style="display:flex;flex-direction:column;">
+        
+        <span id="videoChannel" style="
+        color:var(--text);
+        font-size:14px;
+        cursor:pointer;
+        font-weight:500;">
+            Canal
+        </span>
 
-        <div>
-
-            <h3 id="videoChannel">
-                Canal
-            </h3>
-
-            <p>Suscribirse</p>
-
-        </div>
+        <span style="color:var(--sub);font-size:12px;">
+            Suscribirse
+        </span>
 
     </div>
 
 </div>
-            
-        </div>
+
+</div>
+
+</div>
 
 <div class="recommended" id="recommended">
 
 </div>
-        
-    </div>
 
-    </div>
+</div>
 
-    </div>
+</div>
 
-    <script src="../CGTubeLinks.js"></script>
-    <script src="../LinkChannel.js"></script>
+</div>
 
-    <script>
+<script src="../CGTubeLinks.js"></script>
+<script src="../CGTubeChannels.js"></script>
 
-        const params = new URLSearchParams(window.location.search);
+<script>
 
-const videoId = params.get("v");
+const savedTheme = localStorage.getItem("CGTubeTheme");
 
-        const video = (window.CGTubeLinks || []).find(v => {
+if(savedTheme === "light"){
+    document.body.classList.add("light");
+}
 
-    if (v.url.includes(videoId)) return true;
+const rawItems = [...(window.CGTubeLinks || [])];
 
-    return false;
+let library = [];
 
-});
+/* RANDOM */
 
-        if (videoId) {
+function shuffleArray(array){
 
-    document.getElementById("player").src =
-        `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+for(let i = array.length - 1; i > 0; i--){
 
-        if (video) {
+const j =
+Math.floor(Math.random() * (i + 1));
 
-    document.getElementById("videoTitle").textContent = video.title;
-
-    document.title = `${video.title} - CGTube`;
-
-            }
-
-            const channel = (window.CGTubeChannels || []).find(
-    c => c.id === video.channelId
-);
-
-if (channel) {
-
-    document.getElementById("videoChannel").onclick = () => {
-        location.href = `/ChickenGunTube/channel/?id=${channel.id}`;
-    };
-
-    document.getElementById("channelIcon").onclick = () => {
-        location.href = `/ChickenGunTube/channel/?id=${channel.id}`;
-    };
+[array[i], array[j]] =
+[array[j], array[i]];
 
 }
-            const recommended = document.getElementById("recommended");
 
-(window.CGTubeLinks || [])
-.filter(v => !v.url.includes(videoId))
-.slice(0, 8)
-.forEach(item => {
+}
 
-    const id = item.url.includes("youtu.be/")
-        ? item.url.split("youtu.be/")[1].split("?")[0]
-        : item.url.split("watch?v=")[1].split("&")[0];
+shuffleArray(rawItems);
 
-    const ch = (window.CGTubeChannels || []).find(c => c.id === item.channelId);
+/* VIDEO ID */
 
-    recommended.innerHTML += `
-        <div class="rec-card"
-             onclick="location.href='?v=${id}'">
+function getVideoId(url){
 
-            <div class="rec-thumb"
-                 style="background-image:url('https://img.youtube.com/vi/${id}/hqdefault.jpg')">
-            </div>
+if(url.includes("youtu.be/")){
 
-            <div class="rec-info">
-                <h4>${item.title}</h4>
-                <p>${ch ? ch.name : ""}</p>
-            </div>
+return url
+.split("youtu.be/")[1]
+.split("?")[0];
 
-        </div>
-    `;
+}
+
+if(url.includes("/shorts/")){
+
+return url
+.split("/shorts/")[1]
+.split("?")[0];
+
+}
+
+if(url.includes("watch?v=")){
+
+return url
+.split("watch?v=")[1]
+.split("&")[0];
+
+}
+
+return null;
+
+}
+
+/* SHORT */
+
+function isShort(url){
+
+return url.includes("/shorts/");
+
+}
+
+/* FORMAT */
+
+function getShortFormat(id){
+
+return new Promise(resolve => {
+
+const img = new Image();
+
+img.onload = function(){
+
+if(img.height > img.width){
+
+resolve("vertical");
+
+}else{
+
+resolve("square");
+
+}
+
+};
+
+img.onerror = () => {
+
+resolve("vertical");
+
+};
+
+img.src =
+`https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+
 });
 
+}
+
+/* CREATE VIDEO */
+
+async function createVideo(url){
+
+const id = getVideoId(url);
+if(!id) return;
+
+const type = isShort(url) ? "short" : "video";
+
+let shortFormat = "vertical";
+
+if(type === "short"){
+    shortFormat = await getShortFormat(id);
+}
+
+const raw = rawItems.find(v => getVideoId(v.url) === id);
+
+const ch = window.CGTubeChannels.find(c => c.id === raw?.channelId);
+
+const data = {
+    id,
+    type,
+    shortFormat,
+    title: raw?.title || "",
+    channelId: raw?.channelId || "",
+    channel: ch?.name || "",
+    channelIcon: ch?.icon || "",
+    thumb: `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+};
+
+library.push(data);
+
+if (data.title && data.channelId) {
+    return;
+}
+
+try {
+
+const res = await fetch(
+`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
+);
+
+const info = await res.json();
+
+data.title = info.title || data.title;
+data.channel = info.author_name || data.channel;
+
+/* ARREGLO DE CANALES */
+const channelList = window.CGTubeChannels;
+
+if (Array.isArray(channelList) && data.channel) {
+
+    const videoName = data.channel.toLowerCase().trim();
+
+    const channel = channelList.find(c => {
+        if (!c?.name) return false;
+
+        const dbName = c.name.toLowerCase().trim();
+
+        return videoName.includes(dbName) || dbName.includes(videoName);
+    });
+
+    if (channel) {
+        data.channelId = channel.id;
+        data.channelHandle = channel.handle;
+        data.channelIcon = channel.icon;
+        data.channelBanner = channel.banner;
+        data.channelVerified = channel.verified;
+    }
+}
+
+updateCards?.();
+
+} catch (e) {
+    console.log("Error en createVideo:", e);
+}
+
+}
+    
+/* PLAY */
+
+async function playVideo(id){
+
+const player = document.getElementById("player");
+const titleEl = document.getElementById("videoTitle");
+const channelEl = document.getElementById("videoChannel");
+const iconEl = document.getElementById("channelIcon");
+
+player.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+
+titleEl.innerText = "Cargando...";
+channelEl.innerText = "Cargando...";
+iconEl.src = "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
+
+let item = library.find(v => v.id === id);
+
+if(!item){
+    console.log("Video no encontrado en library");
+    return;
+}
+
+if (item.title) {
+
+    titleEl.innerText = item.title;
+    document.title = `${item.title} - CGTube`;
+
+    if (item.channelId) {
+
+        const ch = window.CGTubeChannels.find(c => c.id === item.channelId);
+
+        if (ch) {
+            channelEl.innerText = ch.name;
+            iconEl.src = ch.icon;
+            item.channelIcon = ch.icon;
         }
 
-    </script>
+    }
+
+    const playerBox = document.getElementById("playerBox");
+
+if(item?.type === "short"){
+    playerBox.classList.add("short");
+}else{
+    playerBox.classList.remove("short");
+}
+
+channelEl.onclick = () => {
+    if(item.channelId){
+        location.href = `/ChickenGunTube/channel/?id=${item.channelId}`;
+    }
+};
+
+iconEl.onclick = () => {
+    if(item.channelId){
+        location.href = `/ChickenGunTube/channel/?id=${item.channelId}`;
+    }
+};
+
+    loadRecommended(id);
+    history.replaceState({}, "", `?v=${id}`);
+    return;
+}
+
+try {
+
+const res = await fetch(
+`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
+);
+
+const info = await res.json();
+
+const title = info.title || item.title;
+const channelName = info.author_name || item.channel;
+
+titleEl.innerText = title;
+channelEl.innerText = channelName;
+document.title = `${title} - CGTube`;
+
+// buscar icono desde tu lista
+let channelIcon = item.channelIcon || null;
+
+const channelList = window.CGTubeChannels;
+
+if (!channelIcon && Array.isArray(channelList) && channelName) {
+
+    const videoName = channelName.toLowerCase().trim();
+
+    const channel = channelList.find(c => {
+        if (!c?.name) return false;
+
+        const dbName = c.name.toLowerCase().trim();
+
+        return (
+            videoName.includes(dbName) ||
+            dbName.includes(videoName)
+        );
+    });
+
+    if (channel) {
+        channelIcon = channel.icon;
+        item.channelId = channel.id;
+        item.channelHandle = channel.handle;
+    }
+}
+
+// aplicar icono final
+iconEl.src = channelIcon || "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
+
+item.title = title;
+item.channel = channelName;
+if(channelIcon){
+    item.channelIcon = channelIcon;
+}
+
+} catch (e) {
+    if (item.channelId) {
+    const ch = window.CGTubeChannels.find(c => c.id === item.channelId);
+    channelEl.innerText = ch?.name || "Canal desconocido";
+} else {
+    channelEl.innerText = item.channel || "Canal desconocido";
+    }
+}
+
+const playerBox = document.getElementById("playerBox");
+
+if(item?.type === "short"){
+    playerBox.classList.add("short");
+}else{
+    playerBox.classList.remove("short");
+}
+
+    channelEl.onclick = () => {
+
+    if(item.channelId){
+        location.href = `/ChickenGunTube/channel/?id=${item.channelId}`;
+    }
+
+};
+
+    iconEl.onclick = () => {
+
+    if(item.channelId){
+        location.href = `/ChickenGunTube/channel/?id=${item.channelId}`;
+    }
+
+};
+
+loadRecommended(id);
+history.replaceState({}, "", `?v=${id}`);
+}
+
+/* CLOSE */
+
+function closePlayer(){
+
+document.getElementById(
+"playerScreen"
+).style.display = "none";
+
+document.getElementById(
+"player"
+).src = "";
+
+}
+
+/* RECOMMENDED */
+
+function loadRecommended(current){
+
+const recommended =
+document.getElementById(
+"recommended"
+);
+
+recommended.innerHTML = "";
+
+const recommendedVideos =
+library.filter(v => v.id !== current);
+
+shuffleArray(recommendedVideos);
+
+recommendedVideos
+.slice(0,6)
+.forEach(video => {
+
+recommended.innerHTML += `
+
+<div
+class="rec-card"
+onclick="location.href='?v=${video.id}'"
+>
+
+<div
+class="rec-thumb"
+style="
+background-image:url('${video.thumb}')
+">
+</div>
+
+<div class="rec-info">
+
+<h4>${video.title}</h4>
+
+<p>${video.channel || ""}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+/* SETTINGS */
+
+function toggleSettings(){
+
+const settings =
+document.getElementById(
+"settings"
+);
+
+settings.style.display =
+
+settings.style.display === "block"
+? "none"
+: "block";
+
+}
+
+/* THEME */
+
+function toggleTheme(){
+
+    document.body.classList.toggle("light");
+
+    localStorage.setItem(
+        "CGTubeTheme",
+        document.body.classList.contains("light")
+        ? "light"
+        : "dark"
+    );
+
+    }
+
+/* RANDOM SHORT */
+
+function randomShort(){
+
+const shorts =
+library.filter(v => v.type === "short");
+
+if(!shorts.length){
+
+alert("No hay shorts");
+
+return;
+
+}
+
+const random =
+shorts[
+Math.floor(
+Math.random() * shorts.length
+)
+];
+
+playVideo(random.id);
+
+}
+
+/* SEARCH */
+    
+document
+.getElementById("searchInput")
+.addEventListener("input", function(){
+
+const value = this.value.toLowerCase();
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+const text = card.innerText.toLowerCase();
+
+card.style.display =
+text.includes(value)
+? "block"
+: "none";
+
+});
+
+});
+
+/* START */
+
+async function start(){
+
+for (const item of rawItems){
+
+    await createVideo(item.url);
+
+}
+
+}
+
+start().then(() => {
+
+const id = new URLSearchParams(location.search).get("v");
+
+if(id){
+
+playVideo(id);
+
+}
+
+});
+
+</script>
 
 </body>
-
 </html>
