@@ -227,6 +227,81 @@ body{
 
 }
 
+/* INFO DEL VIDEO */
+
+.video-info{
+    margin-top:14px;
+}
+
+.video-info h2{
+    font-size:22px;
+    line-height:1.4;
+}
+
+/* CANAL */
+
+.channel-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:12px;
+}
+
+.channel-box img{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    object-fit:cover;
+    background:var(--card);
+    cursor:pointer;
+}
+
+.channel-box h3{
+    font-size:14px;
+    color:var(--text);
+    cursor:pointer;
+}
+
+.channel-box p{
+    margin-top:4px;
+    font-size:12px;
+    color:var(--sub);
+}
+
+/* RECOMMENDED */
+
+.recommended{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.rec-card{
+    display:flex;
+    gap:10px;
+    cursor:pointer;
+}
+
+.rec-thumb{
+    width:168px;
+    aspect-ratio:16/9;
+    border-radius:10px;
+    background-size:cover;
+    background-position:center;
+    flex-shrink:0;
+}
+
+.rec-info h4{
+    font-size:14px;
+    line-height:1.4;
+}
+
+.rec-info p{
+    margin-top:4px;
+    font-size:12px;
+    color:var(--sub);
+}
+        
     </style>
     
 </head>
@@ -295,13 +370,89 @@ body{
 
             </div>
 
+<div class="video-info">
+
+    <h2 id="videoTitle">
+        Cargando...
+    </h2>
+
+    <div class="channel-box">
+
+        <img
+            id="channelIcon"
+            src="https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png">
+
+        <div>
+
+            <h3 id="videoChannel">
+                Canal
+            </h3>
+
+            <p>Suscribirse</p>
+
         </div>
 
     </div>
 
+</div>
+            
+        </div>
+
+<div class="recommended" id="recommended">
+
+</div>
+        
     </div>
 
     </div>
+
+    </div>
+
+    <script src="../LinkVideo.js"></script>
+    <script src="../LinkChannel.js"></script>
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search);
+
+const videoId = params.get("v");
+
+        const video = (window.CGTubeLinks || []).find(v => {
+
+    if (v.url.includes(videoId)) return true;
+
+    return false;
+
+});
+
+        if (videoId) {
+
+    document.getElementById("player").src =
+        `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+
+        if (video) {
+
+    document.getElementById("videoTitle").textContent = video.title;
+
+    document.title = `${video.title} - CGTube`;
+
+            }
+
+            const channel = (window.CGTubeChannels || []).find(
+    c => c.id === video.channelId
+);
+
+if (channel) {
+
+    document.getElementById("videoChannel").textContent = channel.name;
+
+    document.getElementById("channelIcon").src = channel.icon;
+
+}
+
+        }
+
+    </script>
 
 </body>
 
