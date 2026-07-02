@@ -773,7 +773,9 @@ if (Array.isArray(channelList) && data.channel) {
     }
 }
 
-updateCards?.();
+if (typeof updateCards === "function") {
+    updateCards();
+}
 
 } catch (e) {
     console.log("Error en createVideo:", e);
