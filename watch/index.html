@@ -773,8 +773,6 @@ if (Array.isArray(channelList) && data.channel) {
     }
 }
 
-updateCards?.();
-
 } catch (e) {
     console.log("Error en createVideo:", e);
 }
@@ -931,20 +929,6 @@ if(item?.type === "short"){
 
 loadRecommended(id);
 history.replaceState({}, "", `?v=${id}`);
-}
-
-/* CLOSE */
-
-function closePlayer(){
-
-document.getElementById(
-"playerScreen"
-).style.display = "none";
-
-document.getElementById(
-"player"
-).src = "";
-
 }
 
 /* RECOMMENDED */
