@@ -444,11 +444,44 @@ const videoId = params.get("v");
 
 if (channel) {
 
-    document.getElementById("videoChannel").textContent = channel.name;
+    document.getElementById("videoChannel").onclick = () => {
+        location.href = `/ChickenGunTube/channel/?id=${channel.id}`;
+    };
 
-    document.getElementById("channelIcon").src = channel.icon;
+    document.getElementById("channelIcon").onclick = () => {
+        location.href = `/ChickenGunTube/channel/?id=${channel.id}`;
+    };
 
 }
+            const recommended = document.getElementById("recommended");
+
+(window.CGTubeLinks || [])
+.filter(v => !v.url.includes(videoId))
+.slice(0, 8)
+.forEach(item => {
+
+    const id = item.url.includes("youtu.be/")
+        ? item.url.split("youtu.be/")[1].split("?")[0]
+        : item.url.split("watch?v=")[1].split("&")[0];
+
+    const ch = (window.CGTubeChannels || []).find(c => c.id === item.channelId);
+
+    recommended.innerHTML += `
+        <div class="rec-card"
+             onclick="location.href='?v=${id}'">
+
+            <div class="rec-thumb"
+                 style="background-image:url('https://img.youtube.com/vi/${id}/hqdefault.jpg')">
+            </div>
+
+            <div class="rec-info">
+                <h4>${item.title}</h4>
+                <p>${ch ? ch.name : ""}</p>
+            </div>
+
+        </div>
+    `;
+});
 
         }
 
