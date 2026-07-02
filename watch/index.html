@@ -727,14 +727,14 @@ const data = {
     shortFormat,
     title: raw?.title || "",
     channelId: raw?.channelId || "",
-    channel: ch?.name || "",
+    channel: raw?.channel || ch?.name || "",
     channelIcon: ch?.icon || "",
     thumb: `https://img.youtube.com/vi/${id}/hqdefault.jpg`
 };
 
 library.push(data);
 
-if (data.title && data.channelId) {
+if (data.title && data.channel) {
     return;
 }
 
