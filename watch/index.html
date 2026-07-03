@@ -426,21 +426,43 @@ body{
     <script src="../CGTubeChannels.js"></script>
 
     <script>
-
-        const savedTheme = localStorage.getItem("CGTubeTheme");
-
-if (savedTheme === "light") {
-    document.body.classList.add("light");
-}
+const savedTheme = localStorage.getItem("CGTubeTheme");
+if (savedTheme === "light") document.body.classList.add("light");
 
 const params = new URLSearchParams(window.location.search);
 const videoId = params.get("v");
 
-const video = (window.CGTubeLinks || []).find(v => {
-    return v.url.includes(videoId);
-});
+const videos = window.CGTubeLinks || [];
+const channels = window.CGTubeChannels || [];
+
+/* =========================
+   🔥 HELPERS
+========================= */
+
+function getVideoById(id) {
+    return videos.find(v => v.url.includes(id));
+}
+
+function getChannelById(id) {
+    return channels.find(c =>
+        String(c.id).trim() === String(id).trim()
+    );
+}
+
+function getChannelByTitle(title) {
+    const t = title.toLowerCase();
+    return channels.find(c =>
+        c?.name && t.includes(c.name.toLowerCase())
+    );
+}
+
+/* =========================
+   🎬 LOAD VIDEO
+========================= */
 
 if (videoId) {
+
+    const video = getVideoById(videoId);
 
     document.getElementById("player").src =
         `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
@@ -450,63 +472,49 @@ if (videoId) {
         document.title = `${video.title} - CGTube`;
     }
 
-    /* =======================
-       🔥 CANAL FIX DEFINITIVO
-    ======================= */
+    /* =========================
+       📺 CHANNEL SYSTEM FIX
+    ========================= */
 
     let channel = null;
 
-    // 1. por ID
     if (video?.channelId) {
-        channel = (window.CGTubeChannels || []).find(c =>
-            String(c.id).trim() === String(video.channelId).trim()
-        );
+        channel = getChannelById(video.channelId);
     }
 
-    // 2. fallback por nombre
     if (!channel && video?.title) {
-        const title = video.title.toLowerCase();
-
-        channel = (window.CGTubeChannels || []).find(c =>
-            c?.name && title.includes(c.name.toLowerCase())
-        );
+        channel = getChannelByTitle(video.title);
     }
 
-    // 3. UI segura
     document.getElementById("videoChannel").textContent =
-        channel?.name || "Canal Desconocido";
+        channel?.name || "Canal desconocido";
 
     document.getElementById("channelIcon").src =
         channel?.icon || "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
 
 
-    /* =======================
-       🔥 RECOMENDADOS
-    ======================= */
+    /* =========================
+       🔥 RECOMMENDED SYSTEM
+    ========================= */
 
     const recommended = document.getElementById("recommended");
 
-    const list = (window.CGTubeLinks || []).filter(v => {
-        return !v.url.includes(videoId);
+    const list = videos.filter(v => {
+        const id = v.url.split("v=")[1] || v.url;
+        return !id.includes(videoId);
     });
 
-    list.sort(() => Math.random() - 0.5);
+    shuffle(list);
 
     recommended.innerHTML = "";
 
     list.slice(0, 8).forEach(item => {
 
-        const id = item.url.includes("youtu.be/")
-            ? item.url.split("youtu.be/")[1].split("?")[0]
-            : item.url.split("watch?v=")[1].split("&")[0];
+        const id = extractVideoId(item.url);
 
-        let ch = null;
-
-        if (item.channelId) {
-            ch = (window.CGTubeChannels || []).find(c =>
-                c.id === item.channelId
-            );
-        }
+        const ch = item.channelId
+            ? getChannelById(item.channelId)
+            : getChannelByTitle(item.title || "");
 
         recommended.innerHTML += `
             <div class="rec-card" onclick="location.href='?v=${id}'">
@@ -525,19 +533,39 @@ if (videoId) {
     });
 }
 
-        /* THEME */
+/* =========================
+   🧠 UTILS
+========================= */
 
-function toggleTheme(){
+function extractVideoId(url) {
+    if (!url) return "";
+    if (url.includes("youtu.be/")) {
+        return url.split("youtu.be/")[1].split("?")[0];
+    }
+    if (url.includes("watch?v=")) {
+        return url.split("watch?v=")[1].split("&")[0];
+    }
+    return url;
+}
 
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+}
+
+/* =========================
+   🎨 THEME
+========================= */
+
+function toggleTheme() {
     document.body.classList.toggle("light");
 
     localStorage.setItem(
         "CGTubeTheme",
-        document.body.classList.contains("light")
-        ? "light"
-        : "dark"
+        document.body.classList.contains("light") ? "light" : "dark"
     );
-
 }
 
     </script>
