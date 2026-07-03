@@ -459,13 +459,13 @@ const videoId = params.get("v");
 
             }
 
-            let channel = null;
+/* CHANNEL */
+let channel = null;
 
 if (video?.channelId) {
-
-    const channel = (window.CGTubeChannels || []).find(c => {
-    return c.id === video.channelId || c.id === item?.channelId;
-});
+    channel = (window.CGTubeChannels || []).find(c => {
+        return c.id === video.channelId;
+    });
 }
 
 // 🔥 fallback por nombre si falla el ID
@@ -475,19 +475,17 @@ if (!channel && video?.title) {
 
     channel = (window.CGTubeChannels || []).find(c => {
         if (!c?.name) return false;
-
-        const name = c.name.toLowerCase();
-
-        return title.includes(name);
+        return title.includes(c.name.toLowerCase());
     });
-    }
 
-    document.getElementById("videoChannel").textContent =
+}
+
+document.getElementById("videoChannel").textContent =
     channel?.name || "Canal Desconocido";
 
-    document.getElementById("channelIcon").src =
+document.getElementById("channelIcon").src =
     channel?.icon || "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
-
+            
 /* RECOMMENDED */
 
 const recommended = document.getElementById("recommended");
