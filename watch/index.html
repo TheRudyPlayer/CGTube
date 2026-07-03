@@ -429,89 +429,101 @@ body{
 
         const savedTheme = localStorage.getItem("CGTubeTheme");
 
-if(savedTheme === "light"){
+if (savedTheme === "light") {
     document.body.classList.add("light");
 }
-        
 
-        const params = new URLSearchParams(window.location.search);
-
+const params = new URLSearchParams(window.location.search);
 const videoId = params.get("v");
 
-        const video = (window.CGTubeLinks || []).find(v => {
-
-    if (v.url.includes(videoId)) return true;
-
-    return false;
-
+const video = (window.CGTubeLinks || []).find(v => {
+    return v.url.includes(videoId);
 });
 
-        if (videoId) {
+if (videoId) {
 
     document.getElementById("player").src =
         `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
 
-        if (video) {
+    if (video) {
+        document.getElementById("videoTitle").textContent = video.title;
+        document.title = `${video.title} - CGTube`;
+    }
 
-    document.getElementById("videoTitle").textContent = video.title;
+    /* =======================
+       🔥 CANAL FIX DEFINITIVO
+    ======================= */
 
-    document.title = `${video.title} - CGTube`;
+    let channel = null;
 
-            }
+    // 1. por ID
+    if (video?.channelId) {
+        channel = (window.CGTubeChannels || []).find(c =>
+            String(c.id).trim() === String(video.channelId).trim()
+        );
+    }
 
-/* CHANNEL */
+    // 2. fallback por nombre
+    if (!channel && video?.title) {
+        const title = video.title.toLowerCase();
 
-const channel = window.CGTubeChannels?.find(
-    c => c.id === video?.channelId
-);
+        channel = (window.CGTubeChannels || []).find(c =>
+            c?.name && title.includes(c.name.toLowerCase())
+        );
+    }
 
-document.getElementById("videoChannel").textContent =
-    channel?.name || "Canal Desconocido";
+    // 3. UI segura
+    document.getElementById("videoChannel").textContent =
+        channel?.name || "Canal Desconocido";
 
-document.getElementById("channelIcon").src =
-    channel?.icon || "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
-            
-/* RECOMMENDED */
+    document.getElementById("channelIcon").src =
+        channel?.icon || "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
 
-const recommended = document.getElementById("recommended");
 
-// quitar video actual
-const list = (window.CGTubeLinks || [])
-    .filter(v => v.url && !v.url.includes(videoId));
+    /* =======================
+       🔥 RECOMENDADOS
+    ======================= */
 
-// shuffle
-list.sort(() => Math.random() - 0.5);
+    const recommended = document.getElementById("recommended");
 
-recommended.innerHTML = "";
+    const list = (window.CGTubeLinks || []).filter(v => {
+        return !v.url.includes(videoId);
+    });
 
-list.slice(0, 8).forEach(item => {
+    list.sort(() => Math.random() - 0.5);
 
-    const id = item.url.includes("youtu.be/")
-        ? item.url.split("youtu.be/")[1].split("?")[0]
-        : item.url.split("watch?v=")[1].split("&")[0];
+    recommended.innerHTML = "";
 
-    const ch = window.CGTubeChannels?.find(
-        c => c.id === item.channelId
-    );
+    list.slice(0, 8).forEach(item => {
 
-    recommended.innerHTML += `
-        <div class="rec-card"
-             onclick="location.href='?v=${id}'">
+        const id = item.url.includes("youtu.be/")
+            ? item.url.split("youtu.be/")[1].split("?")[0]
+            : item.url.split("watch?v=")[1].split("&")[0];
 
-            <div class="rec-thumb"
-                 style="background-image:url('https://img.youtube.com/vi/${id}/hqdefault.jpg')">
-            </div>
+        let ch = null;
 
-            <div class="rec-info">
-                <h4>${item.title || "Sin título"}</h4>
-                <p>${ch?.name || "Canal desconocido"}</p>
-            </div>
-
-        </div>
-    `;
-});
-
+        if (item.channelId) {
+            ch = (window.CGTubeChannels || []).find(c =>
+                c.id === item.channelId
+            );
         }
+
+        recommended.innerHTML += `
+            <div class="rec-card" onclick="location.href='?v=${id}'">
+
+                <div class="rec-thumb"
+                     style="background-image:url('https://img.youtube.com/vi/${id}/hqdefault.jpg')">
+                </div>
+
+                <div class="rec-info">
+                    <h4>${item.title || "Sin título"}</h4>
+                    <p>${ch?.name || "Canal desconocido"}</p>
+                </div>
+
+            </div>
+        `;
+    });
+}
 
         /* THEME */
 
