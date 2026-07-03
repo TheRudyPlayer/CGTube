@@ -479,10 +479,15 @@ if (channel) {
 
 const recommended = document.getElementById("recommended");
 
-const list = (window.CGTubeLinks || [])
-    .filter(v => v.url.includes(current) === false);
+const list = (window.CGTubeLinks || []).filter(v => {
+    if (!videoId) return true;
+    return !v.url.includes(videoId);
+});
 
-shuffleArray(list);
+// shuffle seguro
+list.sort(() => Math.random() - 0.5);
+
+recommended.innerHTML = "";
 
 list.slice(0, 8).forEach(item => {
 
@@ -490,9 +495,14 @@ list.slice(0, 8).forEach(item => {
         ? item.url.split("youtu.be/")[1].split("?")[0]
         : item.url.split("watch?v=")[1].split("&")[0];
 
-    const ch = (window.CGTubeChannels || []).find(
-        c => c.id === item.channelId
-    );
+    // 🔥 FIX CANAL ROBUSTO
+    let ch = null;
+
+    if (item.channelId) {
+        ch = (window.CGTubeChannels || []).find(
+            c => c.id === item.channelId
+        );
+    }
 
     recommended.innerHTML += `
         <div class="rec-card"
@@ -503,8 +513,8 @@ list.slice(0, 8).forEach(item => {
             </div>
 
             <div class="rec-info">
-                <h4>${item.title}</h4>
-                <p>${ch ? ch.name : ""}</p>
+                <h4>${item.title || "Sin título"}</h4>
+                <p>${ch?.name || "Canal desconocido"}</p>
             </div>
 
         </div>
