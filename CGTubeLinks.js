@@ -44,15 +44,15 @@ window.CGTubeLinks = [
 
 {
     url: "https://youtu.be/cGpKTx35maM",
-    title: "",
-    channel: "",
+    title: "MODERACIÓN en CHICKEN GUN!?!?! (Concepto) | Eitee",
+    channel: "Eitee",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/jUUGSuCHJbg",
-    title: "",
-    channel: "",
+    title: "Cómo INVOCAR a MEAT CHICKEN | Eitee",
+    channel: "Eitee",
     channelId: ""
 },
 
