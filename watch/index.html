@@ -460,26 +460,11 @@ const videoId = params.get("v");
             }
 
 /* CHANNEL */
-let channel = null;
 
-if (video?.channelId) {
-    channel = (window.CGTubeChannels || []).find(
-        c => c.id === video.channelId
-    );
-}
+const channel = window.CGTubeChannels?.find(
+    c => c.id === video?.channelId
+);
 
-// fallback por nombre si falla el ID
-if (!channel && video?.title) {
-    const title = video.title.toLowerCase();
-
-    channel = (window.CGTubeChannels || []).find(c => {
-        if (!c?.name) return false;
-
-        return title.includes(c.name.toLowerCase());
-    });
-}
-
-// aplicar UI
 document.getElementById("videoChannel").textContent =
     channel?.name || "Canal Desconocido";
 
@@ -490,12 +475,11 @@ document.getElementById("channelIcon").src =
 
 const recommended = document.getElementById("recommended");
 
-const list = (window.CGTubeLinks || []).filter(v => {
-    if (!videoId) return true;
-    return !v.url.includes(videoId);
-});
+// quitar video actual
+const list = (window.CGTubeLinks || [])
+    .filter(v => v.url && !v.url.includes(videoId));
 
-// shuffle seguro
+// shuffle
 list.sort(() => Math.random() - 0.5);
 
 recommended.innerHTML = "";
@@ -506,14 +490,9 @@ list.slice(0, 8).forEach(item => {
         ? item.url.split("youtu.be/")[1].split("?")[0]
         : item.url.split("watch?v=")[1].split("&")[0];
 
-    // 🔥 FIX CANAL ROBUSTO
-    let ch = null;
-
-    if (item.channelId) {
-        ch = (window.CGTubeChannels || []).find(
-            c => c.id === item.channelId
-        );
-    }
+    const ch = window.CGTubeChannels?.find(
+        c => c.id === item.channelId
+    );
 
     recommended.innerHTML += `
         <div class="rec-card"
