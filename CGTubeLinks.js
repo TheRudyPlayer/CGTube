@@ -58,85 +58,85 @@ window.CGTubeLinks = [
 
 {
     url: "https://youtu.be/NY8sJ0eSC-w",
-    title: "",
-    channel: "",
+    title: "COMO CONSEGUIR al NEXTBOT en CHICKEN GUN! (I See You) | Eitee",
+    channel: "Eitee",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/zl1oLKIbEvE",
-    title: "",
-    channel: "",
+    title: "¡LISTA de AMIGOS en CHICKEN GUN! (Concepto) | Eitee",
+    channel: "Eitee",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/FCJ9hZnFrTo",
-    title: "",
-    channel: "",
+    title: "😵‍YA LLEGO LA 5.3.0 De Chicken Gun 🔥😱¡Podemos Crear Mecanismos! | J.R CRACK",
+    channel: "J.R CRACK",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/PFSxjgC2iTk",
-    title: "",
-    channel: "",
+    title: "¿PARA que sirven estas armas de Chicken gun? Y su calificación",
+    channel: "Josecito_Papitas_OG",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/s51MPbBYhLU",
-    title: "",
-    channel: "",
+    title: "😮 ИГРАЮ В НОВУЮ ИГРУ FOOD WARS! | CHICKEN GUN!",
+    channel: "PILOT45K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/ruYuZn4Pw64",
-    title: "",
-    channel: "",
+    title: "Untitled",
+    channel: "JUMPER21K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/oRSi2adINes",
-    title: "",
-    channel: "",
+    title: "🔥🐔 La PRIMERA VERSIÓN de Chicken Gun en 2026 😱 | Es Increíble!!! J.R CRACK",
+    channel: "J.R CRACK",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/vfejXap4dpM",
-    title: "",
-    channel: "",
+    title: "🔥Me METÍ A Servidores EXTRAÑOS De Chicken Gun 😱 Me Encuentro A Suscriptores | J.R CRACK",
+    channel: "J.R CRACK",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/i7shcD7dqx4",
-    title: "",
-    channel: "",
+    title: "⭐Actualización MUSICAL De Chicken Gun🎶🎸 Versión 5.4.0 | J.R CRACK",
+    channel: "J.R CRACK",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/J8EizXyANpU",
-    title: "",
-    channel: "",
+    title: "ВЫШЛА ОБНОВА В ЧИКЕН ГАН 4.9! Пасхалки, баги chicken gun update",
+    channel: "KORESH24K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/QesM1RNvqRU",
-    title: "",
-    channel: "",
+    title: "Cosas Eliminadas De Chicken Gun Que Nadie Recuerda",
+    channel: "Pizezo",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/f-6J8iFeGtE",
-    title: "",
-    channel: "",
+    title: "El ORIGEN SECRETO de BASE 01 en Chicken Gun",
+    channel: "Pizezo",
     channelId: ""
 },
 
