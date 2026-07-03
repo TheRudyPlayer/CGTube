@@ -51,7 +51,7 @@ window.CGTubeChannels = [
     banner: ""
 },
 {
-    id: "UCTMLCdhi2bbhv1IKLR5ZGPQ",
+    id: "UCfbZzAbUVz3JsYPSOSx6jTA",
     handle: "@stifflxr",
     name: "ThreeGames",
     icon: "",
