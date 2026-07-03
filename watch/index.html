@@ -427,6 +427,13 @@ body{
 
     <script>
 
+        const savedTheme = localStorage.getItem("CGTubeTheme");
+
+if(savedTheme === "light"){
+    document.body.classList.add("light");
+}
+        
+
         const params = new URLSearchParams(window.location.search);
 
 const videoId = params.get("v");
