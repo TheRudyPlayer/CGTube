@@ -463,23 +463,23 @@ const videoId = params.get("v");
 let channel = null;
 
 if (video?.channelId) {
-    channel = (window.CGTubeChannels || []).find(c => {
-        return c.id === video.channelId;
-    });
+    channel = (window.CGTubeChannels || []).find(
+        c => c.id === video.channelId
+    );
 }
 
-// 🔥 fallback por nombre si falla el ID
+// fallback por nombre si falla el ID
 if (!channel && video?.title) {
-
     const title = video.title.toLowerCase();
 
     channel = (window.CGTubeChannels || []).find(c => {
         if (!c?.name) return false;
+
         return title.includes(c.name.toLowerCase());
     });
-
 }
 
+// aplicar UI
 document.getElementById("videoChannel").textContent =
     channel?.name || "Canal Desconocido";
 
