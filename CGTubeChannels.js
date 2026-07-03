@@ -49,6 +49,14 @@ window.CGTubeChannels = [
     icon: "https://i.postimg.cc/Zq8YQNLb/57-sin-titulo-20260629151052.png",
     verified: true,
     banner: ""
+},
+{
+    id: "UCTMLCdhi2bbhv1IKLR5ZGPQ",
+    handle: "@stifflxr",
+    name: "ThreeGames",
+    icon: "",
+    verified: false,
+    banner: ""
 }
 
 ];
