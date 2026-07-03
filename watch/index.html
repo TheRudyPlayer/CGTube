@@ -712,77 +712,87 @@ img.src =
 
 async function createVideo(url){
 
-const id = getVideoId(url);
-if(!id) return;
+    const id = getVideoId(url);
+    if(!id) return;
 
-const type = isShort(url) ? "short" : "video";
+    const type = isShort(url) ? "short" : "video";
 
-let shortFormat = "vertical";
+    let shortFormat = "vertical";
 
-if(type === "short"){
-    shortFormat = await getShortFormat(id);
-}
-
-const raw = rawItems.find(v => getVideoId(v.url) === id);
-
-const ch = window.CGTubeChannels.find(c => c.id === raw?.channelId);
-
-const data = {
-    id,
-    type,
-    shortFormat,
-    title: safe(raw?.title, "Sin Título"),
-    channel: safe(ch?.name, "Canal Desconocido"),
-    channelIcon: safe(ch?.icon, "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png"),
-    channelId: safe(raw?.channelId, null),
-    thumb: `https://img.youtube.com/vi/${id}/hqdefault.jpg`
-};
-
-library.push(data);
-
-if (data.title && data.channelId) {
-    return;
-}
-
-try {
-
-const res = await fetch(
-`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
-);
-
-const info = await res.json();
-
-data.title = info.title || data.title;
-data.channel = info.author_name || data.channel;
-
-/* ARREGLO DE CANALES */
-const channelList = window.CGTubeChannels;
-
-if (Array.isArray(channelList) && data.channel) {
-
-    const videoName = data.channel.toLowerCase().trim();
-
-    const channel = channelList.find(c => {
-        if (!c?.name) return false;
-
-        const dbName = c.name.toLowerCase().trim();
-
-        return videoName.includes(dbName) || dbName.includes(videoName);
-    });
-
-    if (channel) {
-        data.channelId = channel.id;
-        data.channelHandle = channel.handle;
-        data.channelIcon = channel.icon;
-        data.channelBanner = channel.banner;
-        data.channelVerified = channel.verified;
+    if(type === "short"){
+        shortFormat = await getShortFormat(id);
     }
-}
 
-} catch (e) {
-    console.log("Error en createVideo:", e);
-}
+    const raw = rawItems.find(v => getVideoId(v.url) === id);
 
+    const defaultIcon = "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
+
+    const ch = window.CGTubeChannels?.find(c => c.id === raw?.channelId);
+
+    const data = {
+        id,
+        type,
+        shortFormat,
+
+        title: safe(raw?.title, "Sin Título"),
+        channel: safe(ch?.name, "Canal Desconocido"),
+        channelIcon: safe(ch?.icon, defaultIcon),
+        channelId: safe(raw?.channelId, null),
+
+        thumb: `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+    };
+
+    library.push(data);
+
+    try {
+
+        const res = await fetch(
+            `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`
+        );
+
+        const info = await res.json();
+
+        // 🔥 fallback seguro
+        data.title = safe(info?.title, "⚠ Sin título");
+        data.channel = safe(info?.author_name, "⚠ Canal desconocido");
+
+        const channelList = window.CGTubeChannels;
+
+        let matchedChannel = null;
+
+        if (Array.isArray(channelList) && data.channel) {
+
+            const name = data.channel.toLowerCase().trim();
+
+            matchedChannel = channelList.find(c => {
+                if(!c?.name) return false;
+
+                const db = c.name.toLowerCase().trim();
+
+                return name.includes(db) || db.includes(name);
+            });
+
+            if(matchedChannel){
+
+                data.channelId = matchedChannel.id;
+                data.channelHandle = matchedChannel.handle;
+                data.channelBanner = matchedChannel.banner;
+                data.channelVerified = matchedChannel.verified;
+
+                data.channelIcon = matchedChannel.icon;
+            }
+        }
+
+        // 🔥 asegurar icono final
+        data.channelIcon = data.channelIcon || defaultIcon;
+
+    } catch (e) {
+        console.log("Error en createVideo:", e);
+
+        // fallback final seguro
+        data.title = data.title || "⚠ Sin título";
+        data.channel = data.channel || "⚠ Canal desconocido";
+    }
 }
     
 /* PLAY */
