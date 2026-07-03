@@ -506,6 +506,21 @@ if (channel) {
 
         }
 
+        /* THEME */
+
+function toggleTheme(){
+
+    document.body.classList.toggle("light");
+
+    localStorage.setItem(
+        "CGTubeTheme",
+        document.body.classList.contains("light")
+        ? "light"
+        : "dark"
+    );
+
+}
+
     </script>
 
 </body>
