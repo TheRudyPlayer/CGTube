@@ -599,6 +599,12 @@ Cargando...
 
 <script>
 
+function safe(value, fallback) {
+    return (value && value.toString().trim() !== "")
+        ? value
+        : fallback;
+}
+
 const savedTheme = localStorage.getItem("CGTubeTheme");
 
 if(savedTheme === "light"){
@@ -725,10 +731,10 @@ const data = {
     id,
     type,
     shortFormat,
-    title: raw?.title || "",
-    channelId: raw?.channelId || "",
-    channel: ch?.name || "",
-    channelIcon: ch?.icon || "",
+    title: safe(raw?.title, "Sin Título"),
+    channel: safe(ch?.name, "Canal Desconocido"),
+    channelIcon: safe(ch?.icon, "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png"),
+    channelId: safe(raw?.channelId, null),
     thumb: `https://img.youtube.com/vi/${id}/hqdefault.jpg`
 };
 
@@ -790,9 +796,9 @@ const iconEl = document.getElementById("channelIcon");
 
 player.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
 
-titleEl.innerText = "Cargando...";
-channelEl.innerText = "Cargando...";
-iconEl.src = "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
+titleEl.innerText = item.title || "Sin Título";
+channelEl.innerText = item.channel || "Canal Desconocido";
+iconEl.src = item.channelIcon || "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
 
 let item = library.find(v => v.id === id);
 
@@ -967,9 +973,8 @@ background-image:url('${video.thumb}')
 
 <div class="rec-info">
 
-<h4>${video.title}</h4>
-
-<p>${video.channel || ""}</p>
+<h4>${video.title || "Sin Título"}</h4>
+<p>${video.channel || "Canal Desconocido"}</p>
 
 </div>
 
