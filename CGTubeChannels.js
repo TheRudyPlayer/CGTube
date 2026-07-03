@@ -67,7 +67,7 @@ window.CGTubeChannels = [
     banner: ""
 },
 {
-    id: "",
+    id: "UCO5ksqNroEM4mO8cKdVwVfg",
     handle: "@Pizezo",
     name: "Pizezo",
     icon: "https://i.postimg.cc/j5MyjC7H/pizezoicon.png",
@@ -75,7 +75,7 @@ window.CGTubeChannels = [
     banner: ""
 },
 {
-    id: "",
+    id: "UCaBkS2wy-8lLgoGOZV36uDw",
     handle: "@EiteeYT",
     name: "Eitee",
     icon: "https://i.postimg.cc/6qdyykdg/eiteeicon.png",
@@ -83,7 +83,7 @@ window.CGTubeChannels = [
     banner: ""
 },
 {
-    id: "",
+    id: "UCBlfTiAktH1S0ASIkjRnDhg",
     handle: "@Cerdito_Verde_2",
     name: "🐷Cerdito-Verde-Pequeño🐷",
     icon: "https://i.postimg.cc/J0vbYbnp/cerditoverdeiconlegacy.png",
