@@ -2,12 +2,13 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGTube</title>
-    <link rel="icon" type="image/png" href="../images/chickenguntube_weblogo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGTube</title>
 
-    <style>
+<link rel="icon" href="../images/chickenguntube_weblogo.png">
+
+<style>
 
 :root{
     --bg:#0f0f0f;
@@ -15,39 +16,33 @@
     --card:#181818;
     --hover:#272727;
     --text:#f1f1f1;
-    --sub:#aaaaaa;
+    --sub:#aaa;
     --border:#303030;
 }
 
 body.light{
-    --bg:#ffffff;
-    --panel:#ffffff;
-    --card:#F0F0F0;
-    --hover:#f2f2f2;
-    --text:#111111;
-    --sub:#606060;
-    --border:#dddddd;
+    --bg:#fff;
+    --panel:#fff;
+    --card:#f1f1f1;
+    --hover:#e8e8e8;
+    --text:#111;
+    --sub:#666;
+    --border:#ddd;
 }
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial;
 }
 
 body{
     background:var(--bg);
     color:var(--text);
-    font-family:Arial, Helvetica, sans-serif;
-    overflow-x:hidden;
-}
-
-.main{
-    min-height:100vh;
 }
 
 /* SIDEBAR */
-
 .sidebar{
     position:fixed;
     top:0;
@@ -59,37 +54,24 @@ body{
     display:flex;
     flex-direction:column;
     align-items:center;
-    z-index:100;
-}
-
-.sidebar-logo{
-    width:100%;
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
 }
 
 .sidebar-logo img{
-    width:48px;
-    height:48px;
-    object-fit:contain;
+    width:42px;
+    margin:10px 0;
 }
 
 .nav-btn{
     width:64px;
-    height:74px;
-    border:none;
+    height:70px;
     background:none;
+    border:none;
     color:var(--text);
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:6px;
-    border-radius:12px;
     cursor:pointer;
-    transition:.15s;
 }
 
 .nav-btn:hover{
@@ -97,78 +79,51 @@ body{
 }
 
 .nav-btn svg{
-    width:24px;
-    height:24px;
+    width:22px;
+    height:22px;
     stroke:currentColor;
     fill:none;
     stroke-width:2;
-    stroke-linecap:round;
-    stroke-linejoin:round;
 }
 
-.nav-btn span{
-    font-size:10px;
-}
-
+/* MAIN */
 .main{
     margin-left:72px;
-    min-height:100vh;
 }
 
 /* TOPBAR */
-
 .topbar{
-    position:sticky;
-    top:0;
     height:56px;
-    background:var(--bg);
-    border-bottom:1px solid var(--border);
     display:flex;
     align-items:center;
     justify-content:space-between;
     padding:0 16px;
-    z-index:50;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
 }
 
-.brand{
-    display:flex;
-    align-items:center;
-}
-
-.brand img{
-    height:54px;
-    object-fit:contain;
-}
-
-/* SEARCH */
-
+/* SEARCH REAL (SVG LUPA ORIGINAL) */
 .search{
     width:50%;
-    max-width:650px;
     display:flex;
-    align-items:center;
     border:1px solid var(--border);
     border-radius:999px;
     overflow:hidden;
-    background:var(--bg);
 }
 
 .search input{
     flex:1;
-    height:40px;
     border:none;
     outline:none;
+    padding:10px;
     background:transparent;
     color:var(--text);
-    padding:0 14px;
-    font-size:15px;
 }
 
 .search button{
     width:60px;
-    height:40px;
     border:none;
-    border-left:1px solid var(--border);
     background:var(--card);
     display:flex;
     align-items:center;
@@ -176,400 +131,261 @@ body{
     cursor:pointer;
 }
 
-.search button svg{
-    width:20px;
-    height:20px;
-    stroke:var(--text);
-    fill:none;
-    stroke-width:2;
+/* LAYOUT */
+.layout{
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:20px;
+    padding:20px;
 }
 
-/* CONTENT */
-
-.content{
-    padding:20px;
+@media(max-width:900px){
+    .layout{grid-template-columns:1fr;}
 }
 
 /* PLAYER */
-
-.player-layout{
-    display:grid;
-    grid-template-columns:1fr 360px;
-    gap:24px;
-    padding:20px;
-    align-items:start;
-}
-
-.player-box{
+.player{
     width:100%;
     aspect-ratio:16/9;
     background:black;
-    border-radius:14px;
+    border-radius:12px;
     overflow:hidden;
 }
 
-.player-box.short{
-    max-width:430px;
-    aspect-ratio:9/16;
-}
-
-.player-box iframe{
+.player iframe{
     width:100%;
     height:100%;
     border:none;
 }
 
-@media(max-width:1000px){
-
-.player-layout{
-    grid-template-columns:1fr;
-}
-
-}
-
-/* INFO DEL VIDEO */
-
-.video-info{
-    margin-top:14px;
-}
-
-.video-info h2{
-    font-size:22px;
-    line-height:1.4;
-}
-
-/* CANAL */
-
-.channel-box{
-    display:flex;
-    align-items:center;
-    gap:10px;
+/* INFO */
+.info{
     margin-top:12px;
 }
 
-.channel-box img{
+.channel{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:10px;
+}
+
+.channel img{
     width:36px;
     height:36px;
     border-radius:50%;
-    object-fit:cover;
-    background:var(--card);
-    cursor:pointer;
-}
-
-.channel-box h3{
-    font-size:14px;
-    color:var(--text);
-    cursor:pointer;
-}
-
-.channel-box p{
-    margin-top:4px;
-    font-size:12px;
-    color:var(--sub);
 }
 
 /* RECOMMENDED */
-
-.recommended{
+.rec{
     display:flex;
     flex-direction:column;
-    gap:14px;
+    gap:12px;
 }
 
-.rec-card{
+.card{
     display:flex;
     gap:10px;
     cursor:pointer;
 }
 
-.rec-thumb{
-    width:168px;
+.thumb{
+    width:160px;
     aspect-ratio:16/9;
-    border-radius:10px;
     background-size:cover;
-    background-position:center;
-    flex-shrink:0;
+    border-radius:8px;
 }
 
-.rec-info h4{
+.card h4{
     font-size:14px;
-    line-height:1.4;
 }
 
-.rec-info p{
-    margin-top:4px;
+.card p{
     font-size:12px;
     color:var(--sub);
 }
-        
-    </style>
-    
+
+</style>
 </head>
 
 <body>
 
-    <div class="sidebar">
+<!-- SIDEBAR -->
+<div class="sidebar">
 
 <div class="sidebar-logo">
-<img src="../images/chickenguntube_weblogo.png">
+    <img src="../images/chickenguntube_weblogo.png">
 </div>
 
-<button class="nav-btn" onclick="showHome()">
-
-<svg viewBox="0 0 24 24">
-<path d="M3 10L12 3L21 10"></path>
-<path d="M5 9V20H19V9"></path>
-</svg>
-
-<span>Inicio</span>
-
+<button class="nav-btn">
+<svg viewBox="0 0 24 24"><path d="M3 10L12 3l9 7"></path><path d="M5 9v12h14V9"></path></svg>
 </button>
 
-<button class="nav-btn" onclick="toggleSettings()">
-
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="3"></circle>
-<path d="M12 2V5"></path>
-<path d="M12 19V22"></path>
-<path d="M2 12H5"></path>
-<path d="M19 12H22"></path>
-</svg>
-
-<span>Ajustes</span>
-
+<button class="nav-btn">
+<svg viewBox="0 0 24 24"><path d="M8 5l8 7-8 7V5z"></path></svg>
 </button>
 
-    </div>
-
-    <div class="main">
-
-    <div class="topbar">
-
-    <div class="brand" onclick="location.href='/ChickenGunTube/'" style="cursor:pointer;">
-        <img src="../images/chickentube_logo.png">
-    </div>
-
-    <div class="search">
-
-        <input
-            type="text"
-            placeholder="Buscar">
-
-        <button>
-
-            <svg viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="7"></circle>
-                <path d="M20 20L17 17"></path>
-            </svg>
-
-        </button>
-
-    </div>
-
-    </div>
-
-    <div class="content">
-
-    <div class="player-layout">
-
-        <div>
-
-            <div class="player-box" id="playerBox">
-
-                <iframe
-                    id="player"
-                    allowfullscreen
-                    allow="autoplay">
-                </iframe>
-
-            </div>
-
-<div class="video-info">
-
-    <h2 id="videoTitle">
-        Cargando...
-    </h2>
-
-    <div class="channel-box">
-
-        <img
-            id="channelIcon"
-            src="https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png">
-
-        <div>
-
-            <h3 id="videoChannel">
-                Canal
-            </h3>
-
-            <p>Suscribirse</p>
-
-        </div>
-
-    </div>
+<button class="nav-btn" onclick="toggleTheme()">
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle></svg>
+</button>
 
 </div>
-            
-        </div>
 
-<div class="recommended" id="recommended">
+<!-- MAIN -->
+<div class="main">
+
+<!-- TOPBAR -->
+<div class="topbar">
+
+<div>CGTube</div>
+
+<div class="search">
+<input id="searchInput" placeholder="Buscar">
+
+<button onclick="searchVideo()">
+<svg viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="M20 20l-3-3"></path>
+</svg>
+</button>
 
 </div>
-        
-    </div>
 
-    </div>
+</div>
 
-    </div>
+<!-- CONTENT -->
+<div class="layout">
 
-    <script src="../CGTubeLinks.js"></script>
-    <script src="../CGTubeChannels.js"></script>
+<!-- LEFT -->
+<div>
 
-    <script>
-const savedTheme = localStorage.getItem("CGTubeTheme");
-if (savedTheme === "light") document.body.classList.add("light");
+<div class="player">
+<iframe id="player"></iframe>
+</div>
 
-const params = new URLSearchParams(window.location.search);
-const videoId = params.get("v");
+<div class="info">
+<h2 id="title">Cargando...</h2>
 
-const videos = window.CGTubeLinks || [];
+<div class="channel">
+<img id="icon">
+<div id="channel">Canal</div>
+</div>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="rec" id="rec"></div>
+
+</div>
+</div>
+
+<script src="../CGTubeLinks.js"></script>
+<script src="../LinkChannel.js"></script>
+
+<script>
+
+const params = new URLSearchParams(location.search);
+const id = params.get("v");
+
+const links = window.CGTubeLinks || [];
 const channels = window.CGTubeChannels || [];
 
-/* =========================
-   🔥 HELPERS
-========================= */
+const video = links.find(v => v.url?.includes(id));
 
-function getVideoById(id) {
-    return videos.find(v => v.url.includes(id));
+/* PLAYER */
+if(id){
+    document.getElementById("player").src =
+    `https://www.youtube.com/embed/${id}?autoplay=1`;
+
+    if(video){
+        document.getElementById("title").textContent = video.title;
+        document.title = video.title;
+    }
 }
 
-function getChannelById(id) {
-    return channels.find(c =>
-        String(c.id).trim() === String(id).trim()
-    );
+/* CHANNEL FIX */
+let channel = null;
+
+if(video?.channelId){
+    channel = channels.find(c => c.id == video.channelId);
 }
 
-function getChannelByTitle(title) {
-    const t = title.toLowerCase();
-    return channels.find(c =>
+if(!channel && video?.title){
+    const t = video.title.toLowerCase();
+    channel = channels.find(c =>
         c?.name && t.includes(c.name.toLowerCase())
     );
 }
 
-/* =========================
-   🎬 LOAD VIDEO
-========================= */
+document.getElementById("channel").textContent =
+channel?.name || "Canal desconocido";
 
-if (videoId) {
+document.getElementById("icon").src =
+channel?.icon || "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
 
-    const video = getVideoById(videoId);
+/* 🔥 RECOMMENDED SYSTEM REAL */
+const rec = document.getElementById("rec");
 
-    document.getElementById("player").src =
-        `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-
-    if (video) {
-        document.getElementById("videoTitle").textContent = video.title;
-        document.title = `${video.title} - CGTube`;
-    }
-
-    /* =========================
-       📺 CHANNEL SYSTEM FIX
-    ========================= */
-
-    let channel = null;
-
-    if (video?.channelId) {
-        channel = getChannelById(video.channelId);
-    }
-
-    if (!channel && video?.title) {
-        channel = getChannelByTitle(video.title);
-    }
-
-    document.getElementById("videoChannel").textContent =
-        channel?.name || "Canal desconocido";
-
-    document.getElementById("channelIcon").src =
-        channel?.icon || "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
-
-
-    /* =========================
-       🔥 RECOMMENDED SYSTEM
-    ========================= */
-
-    const recommended = document.getElementById("recommended");
-
-    const list = videos.filter(v => {
-        const id = v.url.split("v=")[1] || v.url;
-        return !id.includes(videoId);
-    });
-
-    shuffle(list);
-
-    recommended.innerHTML = "";
-
-    list.slice(0, 8).forEach(item => {
-
-        const id = extractVideoId(item.url);
-
-        const ch = item.channelId
-            ? getChannelById(item.channelId)
-            : getChannelByTitle(item.title || "");
-
-        recommended.innerHTML += `
-            <div class="rec-card" onclick="location.href='?v=${id}'">
-
-                <div class="rec-thumb"
-                     style="background-image:url('https://img.youtube.com/vi/${id}/hqdefault.jpg')">
-                </div>
-
-                <div class="rec-info">
-                    <h4>${item.title || "Sin título"}</h4>
-                    <p>${ch?.name || "Canal desconocido"}</p>
-                </div>
-
-            </div>
-        `;
-    });
-}
-
-/* =========================
-   🧠 UTILS
-========================= */
-
-function extractVideoId(url) {
-    if (!url) return "";
-    if (url.includes("youtu.be/")) {
+function getId(url){
+    if(!url) return "";
+    if(url.includes("youtu.be/"))
         return url.split("youtu.be/")[1].split("?")[0];
-    }
-    if (url.includes("watch?v=")) {
+
+    if(url.includes("watch?v="))
         return url.split("watch?v=")[1].split("&")[0];
-    }
-    return url;
+
+    return "";
 }
 
-function shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
+const list = links
+.filter(v => v.url !== video?.url)
+.sort(()=>Math.random()-0.5)
+.slice(0,8);
+
+rec.innerHTML = list.map(v => {
+
+const vid = getId(v.url);
+const ch = channels.find(c => c.id == v.channelId);
+
+return `
+<div class="card" onclick="location.href='?v=${vid}'">
+
+<div class="thumb"
+style="background-image:url('https://img.youtube.com/vi/${vid}/hqdefault.jpg')">
+</div>
+
+<div>
+<h4>${v.title || "Sin título"}</h4>
+<p>${ch?.name || "Canal desconocido"}</p>
+</div>
+
+</div>
+`;
+}).join("");
+
+/* SEARCH */
+function searchVideo(){
+const q = document.getElementById("searchInput").value.toLowerCase();
+
+const found = links.find(v =>
+v.title?.toLowerCase().includes(q)
+);
+
+if(found){
+const vid = getId(found.url);
+location.href = "?v=" + vid;
+}
 }
 
-/* =========================
-   🎨 THEME
-========================= */
-
-function toggleTheme() {
-    document.body.classList.toggle("light");
-
-    localStorage.setItem(
-        "CGTubeTheme",
-        document.body.classList.contains("light") ? "light" : "dark"
-    );
+/* THEME */
+function toggleTheme(){
+document.body.classList.toggle("light");
+localStorage.setItem("CGTubeTheme",
+document.body.classList.contains("light")?"light":"dark");
 }
 
-    </script>
+</script>
 
 </body>
-
 </html>
