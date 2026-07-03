@@ -57,6 +57,14 @@ window.CGTubeChannels = [
     icon: "",
     verified: false,
     banner: ""
+},
+{
+    id: "",
+    handle: "",
+    name: "Dragon Dude en Español",
+    icon: "",
+    verified: true,
+    banner: "https://i.postimg.cc/TwhcyHtC/channels4-profile-(7).jpg"
 }
 
 ];
