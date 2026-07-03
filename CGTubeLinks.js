@@ -23,22 +23,22 @@ window.CGTubeLinks = [
 
 {
     url: "https://youtu.be/_Qu03z4z9gY",
-    title: "",
-    channel: "",
+    title: "Los JUGADORES que TODOS ODIAMOS en Chicken Gun!",
+    channel: "Soy Blittar!",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/K5-OkvRmPR0",
-    title: "",
-    channel: "",
+    title: "El PEOR YouTuber de chicken gun | Pedroguimarães90k",
+    channel: "General_pro54",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/UqZff8U7ccg",
-    title: "",
-    channel: "",
+    title: "(INFORMACIÓN ERRONEA) El Mapa Oculto de ChickenGun | MirtHD",
+    channel: "MirtHD",
     channelId: "UC-unh3YIkpHzRCeiZ6RRZ9A"
 },
 
