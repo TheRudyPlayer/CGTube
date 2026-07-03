@@ -707,13 +707,12 @@ img.src =
 });
 
 }
-
+    
 /* CREATE VIDEO */
-
 async function createVideo(url){
 
     const id = getVideoId(url);
-    if(!id) return;
+    if(!id) return null;
 
     const type = isShort(url) ? "short" : "video";
 
@@ -727,18 +726,14 @@ async function createVideo(url){
 
     const defaultIcon = "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
 
-    const ch = window.CGTubeChannels?.find(c => c.id === raw?.channelId);
-
     const data = {
         id,
         type,
         shortFormat,
-
         title: safe(raw?.title, "Sin Título"),
-        channel: safe(ch?.name, "Canal Desconocido"),
-        channelIcon: safe(ch?.icon, defaultIcon),
-        channelId: safe(raw?.channelId, null),
-
+        channel: "Cargando...",
+        channelIcon: defaultIcon,
+        channelId: raw?.channelId || null,
         thumb: `https://img.youtube.com/vi/${id}/hqdefault.jpg`
     };
 
@@ -752,19 +747,16 @@ async function createVideo(url){
 
         const info = await res.json();
 
-        // 🔥 fallback seguro
-        data.title = safe(info?.title, "⚠ Sin título");
-        data.channel = safe(info?.author_name, "⚠ Canal desconocido");
+        data.title = safe(info?.title, "Sin título");
+        data.channel = safe(info?.author_name, "Canal desconocido");
 
         const channelList = window.CGTubeChannels;
 
-        let matchedChannel = null;
-
-        if (Array.isArray(channelList) && data.channel) {
+        if (Array.isArray(channelList)) {
 
             const name = data.channel.toLowerCase().trim();
 
-            matchedChannel = channelList.find(c => {
+            const ch = channelList.find(c => {
                 if(!c?.name) return false;
 
                 const db = c.name.toLowerCase().trim();
@@ -772,27 +764,18 @@ async function createVideo(url){
                 return name.includes(db) || db.includes(name);
             });
 
-            if(matchedChannel){
-
-                data.channelId = matchedChannel.id;
-                data.channelHandle = matchedChannel.handle;
-                data.channelBanner = matchedChannel.banner;
-                data.channelVerified = matchedChannel.verified;
-
-                data.channelIcon = matchedChannel.icon;
+            if(ch){
+                data.channelId = ch.id;
+                data.channelIcon = ch.icon;
+                data.channelHandle = ch.handle;
             }
         }
 
-        // 🔥 asegurar icono final
-        data.channelIcon = data.channelIcon || defaultIcon;
-
     } catch (e) {
-        console.log("Error en createVideo:", e);
-
-        // fallback final seguro
-        data.title = data.title || "⚠ Sin título";
-        data.channel = data.channel || "⚠ Canal desconocido";
+        console.log("createVideo error:", e);
     }
+
+    return data; // 🔥 CLAVE
 }
     
 /* PLAY */
