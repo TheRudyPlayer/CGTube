@@ -789,6 +789,13 @@ if (Array.isArray(channelList) && data.channel) {
 
 async function playVideo(id){
 
+let item = library.find(v => v.id === id);
+
+if(!item){
+    console.log("Video no encontrado en library");
+    return;
+}
+
 const player = document.getElementById("player");
 const titleEl = document.getElementById("videoTitle");
 const channelEl = document.getElementById("videoChannel");
@@ -799,13 +806,6 @@ player.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
 titleEl.innerText = item.title || "Sin Título";
 channelEl.innerText = item.channel || "Canal Desconocido";
 iconEl.src = item.channelIcon || "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
-
-let item = library.find(v => v.id === id);
-
-if(!item){
-    console.log("Video no encontrado en library");
-    return;
-}
 
 if (item.title) {
 
