@@ -905,156 +905,138 @@ async function playVideo(id){
 
 function loadRecommended(current){
 
-const recommended =
-document.getElementById(
-"recommended"
-);
+    const container = document.getElementById("recommended");
 
-recommended.innerHTML = "";
+    if(!container) return;
 
-const recommendedVideos =
-library.filter(v => v.id !== current);
+    container.innerHTML = "";
 
-shuffleArray(recommendedVideos);
+    const list = library
+        .filter(v => v.id !== current)
+        .filter(v => v?.id && v?.thumb);
 
-recommendedVideos
-.slice(0,6)
-.forEach(video => {
+    shuffleArray(list);
 
-recommended.innerHTML += `
+    const fallbackTitle = "Sin Título";
+    const fallbackChannel = "Canal Desconocido";
 
-<div
-class="rec-card"
-onclick="location.href='?v=${video.id}'"
->
+    const items = list.slice(0, 6);
 
-<div
-class="rec-thumb"
-style="
-background-image:url('${video.thumb}')
-">
-</div>
+    items.forEach(video => {
 
-<div class="rec-info">
+        const title = video.title || fallbackTitle;
+        const channel = video.channel || fallbackChannel;
+        const thumb = video.thumb || "https://via.placeholder.com/320x180?text=No+Image";
 
-<h4>${video.title || "Sin Título"}</h4>
-<p>${video.channel || "Canal Desconocido"}</p>
+        const card = document.createElement("div");
+        card.className = "rec-card";
 
-</div>
+        card.onclick = () => {
+            location.href = `?v=${video.id}`;
+        };
 
-</div>
+        card.innerHTML = `
+            <div class="rec-thumb"
+                style="background-image:url('${thumb}')">
+            </div>
 
-`;
+            <div class="rec-info">
+                <h4>${title}</h4>
+                <p>${channel}</p>
+            </div>
+        `;
 
-});
-
-}
-
-/* SETTINGS */
-
-function toggleSettings(){
-
-const settings =
-document.getElementById(
-"settings"
-);
-
-settings.style.display =
-
-settings.style.display === "block"
-? "none"
-: "block";
-
-}
+        container.appendChild(card);
+    });
+    }
 
 /* THEME */
 
 function toggleTheme(){
 
-    document.body.classList.toggle("light");
+    const body = document.body;
+    const isLight = body.classList.toggle("light");
 
-    localStorage.setItem(
-        "CGTubeTheme",
-        document.body.classList.contains("light")
-        ? "light"
-        : "dark"
-    );
-
+    localStorage.setItem("CGTubeTheme", isLight ? "light" : "dark");
     }
 
-/* RANDOM SHORT */
+    /* RANDOM SHORT */
 
 function randomShort(){
 
-const shorts =
-library.filter(v => v.type === "short");
+    const shorts = library.filter(v => v?.type === "short");
 
-if(!shorts.length){
+    if(shorts.length === 0){
+        alert("No hay shorts disponibles");
+        return;
+    }
 
-alert("No hay shorts");
+    const randomIndex = Math.floor(Math.random() * shorts.length);
+    const randomVideo = shorts[randomIndex];
 
-return;
+    if(!randomVideo?.id){
+        console.log("Short inválido");
+        return;
+    }
 
+    playVideo(randomVideo.id);
+    }
+
+    /* SEARCH */
+
+const searchInput = document.getElementById("searchInput");
+
+if(searchInput){
+
+    searchInput.addEventListener("input", function(){
+
+        const value = this.value.toLowerCase().trim();
+
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach(card => {
+
+            const text = (card.innerText || "").toLowerCase();
+
+            const match = text.includes(value);
+
+            card.style.display = match ? "block" : "none";
+        });
+
+    });
 }
-
-const random =
-shorts[
-Math.floor(
-Math.random() * shorts.length
-)
-];
-
-playVideo(random.id);
-
-}
-
-/* SEARCH */
-    
-document
-.getElementById("searchInput")
-.addEventListener("input", function(){
-
-const value = this.value.toLowerCase();
-
-const cards = document.querySelectorAll(".card");
-
-cards.forEach(card => {
-
-const text = card.innerText.toLowerCase();
-
-card.style.display =
-text.includes(value)
-? "block"
-: "none";
-
-});
-
-});
 
 /* START */
 
 async function start(){
 
-for (const item of rawItems){
+    const chunkSize = 10;
+    let index = 0;
 
-    await createVideo(item.url);
+    while(index < rawItems.length){
 
+        const chunk = rawItems.slice(index, index + chunkSize);
+
+        // cargar chunk en paralelo
+        await Promise.all(
+            chunk.map(item => createVideo(item.url))
+        );
+
+        index += chunkSize;
+    }
 }
 
-}
+    start().then(() => {
 
-start().then(() => {
+    const params = new URLSearchParams(location.search);
+    const id = params.get("v");
 
-const id = new URLSearchParams(location.search).get("v");
-
-if(id){
-
-playVideo(id);
-
-}
+    if(id && library.length > 0){
+        playVideo(id);
+    }
 
 });
-
+    
 </script>
 
 </body>
