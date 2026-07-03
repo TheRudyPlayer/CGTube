@@ -62,9 +62,33 @@ window.CGTubeChannels = [
     id: "",
     handle: "",
     name: "Dragon Dude en Español",
-    icon: "",
+    icon: "https://i.postimg.cc/TwhcyHtC/channels4-profile-(7).jpg",
     verified: true,
-    banner: "https://i.postimg.cc/TwhcyHtC/channels4-profile-(7).jpg"
+    banner: ""
+},
+{
+    id: "",
+    handle: "@Pizezo",
+    name: "Pizezo",
+    icon: "https://i.postimg.cc/j5MyjC7H/pizezoicon.png",
+    verified: false,
+    banner: ""
+},
+{
+    id: "",
+    handle: "@EiteeYT",
+    name: "Eitee",
+    icon: "https://i.postimg.cc/6qdyykdg/eiteeicon.png",
+    verified: false,
+    banner: ""
+},
+{
+    id: "",
+    handle: "@Cerdito_Verde_2",
+    name: "🐷Cerdito-Verde-Pequeño🐷",
+    icon: "https://i.postimg.cc/J0vbYbnp/cerditoverdeiconlegacy.png",
+    verified: true,
+    banner: ""
 }
 
 ];
