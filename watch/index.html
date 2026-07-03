@@ -463,9 +463,9 @@ const videoId = params.get("v");
 
 if (video?.channelId) {
 
-    channel = (window.CGTubeChannels || []).find(
-        c => c.id === video.channelId
-    );
+    const channel = (window.CGTubeChannels || []).find(c => {
+    return c.id === video.channelId || c.id === item?.channelId;
+});
 }
 
 // 🔥 fallback por nombre si falla el ID
