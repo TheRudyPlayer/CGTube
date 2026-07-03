@@ -142,36 +142,36 @@ window.CGTubeLinks = [
 
 {
     url: "https://youtu.be/d3fuW_TdQXQ",
-    title: "",
-    channel: "",
+    title: "¿Quién Creó Chicken Gun?",
+    channel: "Pizezo",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/s_geZlI4vOU",
-    title: "",
-    channel: "",
+    title: "😱Притворился ВОРОМ На Сервере в ЧИКЕН ГАН! Задания От ПОДПИСЧИКОВ #24",
+    channel: "DEN19K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/iL3o0YUfVZU",
-    title: "",
-    channel: "",
+    title: "😱Сделал САМУЮ Больший БОМБУ в ЧИКЕН ГАН! Задания От ПОДПИСЧИКОВ!",
+    channel: "DEN19K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/SB6t85igDaE",
-    title: "",
-    channel: "",
+    title: "How to make a Jumpscare build 😨 | Chicken gun update",
+    channel: "Santa Chicken",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/_uwxQJ6KH2Y",
-    title: "",
-    channel: "",
+    title: "СЕКРЕТЫ ОБНОВЫ 5.4.0 В ЧИКЕН ГАН!",
+    channel: "ZHURA24K",
     channelId: ""
 },
 
@@ -184,57 +184,57 @@ window.CGTubeLinks = [
 
 {
     url: "https://youtu.be/_2i7JU9iGOM",
-    title: "",
-    channel: "",
+    title: "😱Плачущая КУРИЦА Стала ОГРОМНОЙ в ЧИКЕН ГАН! Проверка МИФОВ #6",
+    channel: "DEN19K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/Vw1W_5exiRw",
-    title: "",
-    channel: "",
+    title: "😱ЯХТА За 1 Монету vs 1,000,000 МОНЕТ в ЧИКЕН ГАН!",
+    channel: "DEN19K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/2kS7SP3uBSk",
-    title: "",
-    channel: "",
+    title: "Tutorial de Comandos del Chicken Gun! (Color, Size y Scale) | Eitee",
+    channel: "Eitee",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/5Q59YDeV5sM",
-    title: "",
-    channel: "",
+    title: "El Desafío Definitivo Nivel 10000 de Chicken Gun",
+    channel: "Dragon Dude en Español",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/AQV3cMZfhJo",
-    title: "",
-    channel: "",
+    title: "EL MUNDO SE INDUNDA Y ESCAPAMOS",
+    channel: "NikE GAMER lEE😼",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/R6_kjcBeFpg",
-    title: "",
-    channel: "",
+    title: "Chicken gun skybox [ POPULAR VID ]",
+    channel: "PilotCG",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/kpuORHAk39w",
-    title: "",
-    channel: "",
+    title: "😍 Forts Map Mini Version | Chicken gun",
+    channel: "Santa Chicken",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/qaY5BHR9gmE",
-    title: "",
-    channel: "",
+    title: "YOU VS TALL CHICKEN...",
+    channel: "🐷Cerdito-Verde-Pequeño🐷",
     channelId: ""
 },
 
