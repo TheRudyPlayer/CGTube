@@ -369,6 +369,13 @@ body{
     color:var(--sub);
 
 }
+.channel-box,
+.channel-box *{
+    -webkit-user-select:none;
+    user-select:none;
+    -webkit-touch-callout:none;
+    -webkit-tap-highlight-color:transparent;
+}
 
 /* =========================
    RECOMMENDED
@@ -748,7 +755,7 @@ if (currentChannel) {
         currentChannel.icon ||
         "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
 
-    channelIcon.onclick = () => {
+    const goChannel = () => {
 
         if (currentChannel.url) {
 
@@ -758,10 +765,9 @@ if (currentChannel) {
 
     };
 
-    videoChannel.onclick = channelIcon.onclick;
+    document.querySelector(".channel-box").onclick = goChannel;
 
 }
-
 else{
 
     videoChannel.textContent = "Canal desconocido";
