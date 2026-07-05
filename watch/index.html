@@ -758,18 +758,15 @@ if (currentChannel) {
         "https://i.postimg.cc/1XkYCRr5/56-sin-titulo-20260628220556.png";
 
     const goChannel = () => {
+    if (currentChannel.id) {
+        location.href =
+            "https://www.youtube.com/channel/" + currentChannel.id;
+    }
+};
 
-        if (currentChannel.url) {
-
-            location.href = currentChannel.url;
-
-        }
-
-    };
-
-    document.querySelector(".channel-box").onclick = goChannel;
-
+document.querySelector(".channel-box").onclick = goChannel;
 }
+      
 else{
 
     videoChannel.textContent = "Canal desconocido";
