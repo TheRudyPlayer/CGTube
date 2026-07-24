@@ -473,7 +473,7 @@ body{
       </button>
           
 
-    <button class="nav-btn" onclick="toggleSettings()">
+    <button class="nav-btn" onclick="location.href='../settings/'">
 
         <svg viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="3"></circle>
@@ -934,25 +934,6 @@ function toggleTheme(){
 function showHome(){
 
     location.href = "/CGTube/";
-
-}
-
-/* ==========================
-   SETTINGS
-========================== */
-
-function toggleSettings(){
-
-const settings =
-document.getElementById(
-"settings"
-);
-
-settings.style.display =
-
-settings.style.display === "block"
-? "none"
-: "block";
 
 }
 
