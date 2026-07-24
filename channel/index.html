@@ -376,32 +376,6 @@ ${video.views || ""} • ${video.uploaded || ""}
 </div>
 `;
 
-container.innerHTML+=`
-<div onclick="location.href='../watch/?v=${id}'"
-style="
-cursor:pointer;
-display:inline-block;
-width:320px;
-margin:10px;
-vertical-align:top;
-">
-
-<img
-src="https://img.youtube.com/vi/${id}/hqdefault.jpg"
-style="
-width:100%;
-border-radius:12px;
-">
-
-<h3>${info.title||"Video"}</h3>
-
-<p style="color:var(--sub)">
-${info.author_name||""}
-</p>
-
-</div>
-`;
-
 });
 
 </script>
