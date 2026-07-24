@@ -235,7 +235,7 @@ window.CGTubeLinks = [
     url: "https://youtu.be/qaY5BHR9gmE",
     title: "YOU VS TALL CHICKEN...",
     channel: "🐷Cerdito-Verde-Pequeño🐷",
-    channelId: ""
+    channelId: "UCBlfTiAktH1S0ASIkjRnDhg"
 },
 
 {
