@@ -347,7 +347,7 @@ body{
     </button>
 
 
-    <button class="nav-btn" onclick="toggleSettings()">
+    <button class="nav-btn" onclick="location.href='../settings/'">
 
         <svg viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="3"></circle>
@@ -362,16 +362,6 @@ body{
     </button>
 
 </div>
-
-    <div id="settings" class="settings">
-
-    <h3>Ajustes</h3>
-
-    <button onclick="toggleTheme()">
-        Cambiar tema
-    </button>
-
-    </div>
 
 
 <div class="main">
@@ -568,23 +558,6 @@ onclick="location.href='../watch/?v=${id}'">
     );
 
     }
-
-    /* SETTINGS */
-    function toggleSettings(){
-
-const settings =
-document.getElementById(
-"settings"
-);
-
-settings.style.display =
-
-settings.style.display === "block"
-? "none"
-: "block";
-
-    }
-
 
 </script>
 
