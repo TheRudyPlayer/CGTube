@@ -16,6 +16,14 @@
     --sub:#aaaaaa;
 }
 
+body.light{
+    --bg:#ffffff;
+    --card:#ffffff;
+    --hover:#e0e0e0;
+    --text:#111111;
+    --sub:#606060;
+}
+
 *{
     margin:0;
     padding:0;
@@ -98,7 +106,7 @@ button{
 }
 
 button:hover{
-    background:#353535;
+    background:var(--hover);
 }
 
 @media (max-width:700px){
@@ -126,6 +134,18 @@ button{
 
 </style>
 </head>
+<script>
+
+const savedTheme =
+localStorage.getItem("CGTubeTheme");
+
+if(savedTheme === "light"){
+
+    document.body.classList.add("light");
+
+}
+
+</script>
 
 <body>
 
