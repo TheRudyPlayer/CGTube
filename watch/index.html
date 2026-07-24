@@ -759,8 +759,7 @@ if (currentChannel) {
 
     const goChannel = () => {
     if (currentChannel.id) {
-        location.href =
-            "https://www.youtube.com/channel/" + currentChannel.id;
+        location.href = "../Channel/?id=" + currentChannel.id;
     }
 };
 
