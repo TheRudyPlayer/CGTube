@@ -943,10 +943,16 @@ function showHome(){
 
 function toggleSettings(){
 
-    // Puedes reemplazar esto
-    // por tu menú de ajustes.
+const settings =
+document.getElementById(
+"settings"
+);
 
-    toggleTheme();
+settings.style.display =
+
+settings.style.display === "block"
+? "none"
+: "block";
 
 }
 
