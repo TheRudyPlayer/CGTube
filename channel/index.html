@@ -317,7 +317,6 @@ new URLSearchParams(location.search);
 
 const channelId =
 params.get("id");
-    alert("ID recibido: " + channelId);
 
 
 
@@ -325,6 +324,7 @@ const channel =
 window.CGTubeChannels.find(
 c => c.id === channelId
 );
+    alert("Canal: " + (channel ? channel.name : "NO ENCONTRADO"));
 
 
 
