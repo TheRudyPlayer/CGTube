@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
@@ -21,366 +22,402 @@
 }
 
 body.light{
-    --bg:#ffffff;
-    --text:#111111;
-    --sub:#606060;
-    --border:#dddddd;
-    --card:#F0F0F0;
-    --hover:#e5e5e5;
+    --bg:#fff;
+    --text:#111;
+    --sub:#666;
+    --border:#ddd;
+    --card:#f0f0f0;
+    --hover:#eee;
 }
 
+
+*{
+    box-sizing:border-box;
+}
+
+
 body{
+
     margin:0;
     background:var(--bg);
     color:var(--text);
     font-family:Arial,sans-serif;
+
 }
+
 
 .sidebar{
+
     position:fixed;
-    top:0;
     left:0;
+    top:0;
+
     width:72px;
     height:100vh;
-    background:var(--bg);
+
     border-right:1px solid var(--border);
+
     display:flex;
     flex-direction:column;
     align-items:center;
-    z-index:100;
+
 }
 
-.sidebar-logo{
-    width:100%;
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-}
 
-.sidebar-logo img{
+.sidebar img{
+
     width:48px;
     height:48px;
+
+    margin:15px;
+
 }
+
 
 .nav-btn{
+
     width:64px;
-    height:74px;
+    height:60px;
+
     border:none;
     background:none;
+
     color:var(--text);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:6px;
-    border-radius:12px;
+
     cursor:pointer;
+
 }
+
 
 .nav-btn:hover{
+
     background:var(--hover);
+    border-radius:12px;
+
 }
 
-.nav-btn svg{
-    width:24px;
-    height:24px;
-    stroke:currentColor;
-    fill:none;
-    stroke-width:2;
-}
-
-.nav-btn span{
-    font-size:10px;
-}
 
 .main{
+
     margin-left:72px;
+
 }
+
+
+/* BANNER */
+
 
 .banner{
+
     width:100%;
     height:220px;
+
     background:#222;
+
 }
+
 
 .banner img{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
+
 }
+
+
+
+/* INFO */
+
 
 .channel-info{
-    max-width:1200px;
-    margin:auto;
+
     display:flex;
-    gap:24px;
+
+    gap:20px;
+
     padding:20px;
+
 }
+
 
 .channel-icon{
-    width:140px;
-    height:140px;
+
+    width:120px;
+    height:120px;
+
     border-radius:50%;
+
     object-fit:cover;
+
 }
 
-.channel-text h1{
+
+.channel-name{
+
+    font-size:32px;
+
     margin:0;
-    font-size:34px;
+
 }
 
-.channel-text p{
+
+.handle{
+
     color:var(--sub);
+
 }
 
-.tabs{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    gap:30px;
-    padding:0 20px;
-    border-bottom:1px solid var(--border);
-}
 
-.tab{
-    padding:16px 0;
-    cursor:pointer;
-}
+
+/* VIDEOS */
+
 
 .videos{
-    max-width:1200px;
-    margin:auto;
+
     padding:20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+
+    gap:20px;
+
 }
 
-.settings{
-    position:fixed;
-    left:72px;
-    top:60px;
-    width:240px;
-    background:var(--bg);
-    border:1px solid var(--border);
-    padding:14px;
-    display:none;
-    z-index:200;
-}
 
-.settings button{
-    width:100%;
-    height:42px;
-    border:none;
-    background:var(--card);
-    color:var(--text);
-    border-radius:10px;
+.video-card{
+
     cursor:pointer;
-    }
+
+}
+
+
+.video-card img{
+
+    width:100%;
+
+    border-radius:12px;
+
+}
+
+
+.video-card h3{
+
+    margin:8px 0;
+
+}
+
+
+.video-card p{
+
+    color:var(--sub);
+
+}
+
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="sidebar">
 
-<div class="settings" id="settings">
 
-<button onclick="toggleTheme()">
-Cambiar tema
-</button>
+<img src="../images/chickenguntube_weblogo.png">
 
-</div>
-
-<div class="sidebar-logo" onclick="history.back()">
-    <img src="../images/chickenguntube_weblogo.png">
-</div>
 
 <button class="nav-btn"
 onclick="location.href='/CGTube/'">
 
-<svg viewBox="0 0 24 24">
-<path d="M3 10L12 3L21 10"></path>
-<path d="M5 9V20H19V9"></path>
-</svg>
-
-<span>Inicio</span>
+⌂
 
 </button>
+
 
 <button class="nav-btn"
 onclick="history.back()">
 
-<svg viewBox="0 0 24 24">
-<path d="M15 18L9 12L15 6"></path>
-</svg>
-
-<span>Volver</span>
+←
 
 </button>
 
-<button class="nav-btn" onclick="toggleSettings()">
-
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="3"></circle>
-<path d="M12 2V5"></path>
-<path d="M12 19V22"></path>
-<path d="M2 12H5"></path>
-<path d="M19 12H22"></path>
-</svg>
-
-<span>Ajustes</span>
-
-    </button>
 
 </div>
+
+
 
 <div class="main">
 
+
 <div class="banner">
-    <img id="banner">
+
+<img id="banner">
+
 </div>
+
+
 
 <div class="channel-info">
 
-<img
-id="icon"
+
+<img id="icon"
 class="channel-icon">
 
-<div class="channel-text">
 
-<h1 id="name">
+<div>
+
+
+<h1 id="channelName"
+class="channel-name">
+
 Canal
+
 </h1>
 
-<p id="handle">
+
+<p id="handle"
+class="handle">
+
 @canal
+
 </p>
 
-</div>
 
 </div>
 
-<div class="tabs">
-
-<div class="tab">
-Videos
-</div>
-
-<div class="tab">
-Shorts
-</div>
 
 </div>
 
-<div
-id="videos"
-class="videos">
+
+
+<div class="videos"
+id="videos">
 
 </div>
+
+
+</div>
+
 
 <script src="../LinkChannel.js"></script>
 <script src="../LinkVideo.js"></script>
 
+
 <script>
 
-const savedTheme = localStorage.getItem("CGTubeTheme");
 
-if(savedTheme === "light"){
-    document.body.classList.add("light");
-}
+const params =
+new URLSearchParams(location.search);
 
-function toggleSettings(){
 
-const settings = document.getElementById("settings");
+const channelId =
+params.get("id");
 
-settings.style.display =
-settings.style.display === "block"
-? "none"
-: "block";
 
-}
 
-function toggleTheme(){
-
-document.body.classList.toggle("light");
-
-localStorage.setItem(
-"CGTubeTheme",
-document.body.classList.contains("light")
-? "light"
-: "dark"
+const channel =
+window.CGTubeChannels.find(
+c => c.id === channelId
 );
 
-}
 
-    // aqui empieza el sistema
-const channelId=new URLSearchParams(location.search).get("id");
-
-const channel = window.CGTubeChannels.find(c => c.id === channelId);
 
 if(!channel){
-document.getElementById("videos").innerHTML="<h2>Canal no encontrado</h2>";
+
+document.getElementById("videos").innerHTML =
+"<h2>Canal no encontrado</h2>";
+
 throw "";
+
 }
 
-document.title = channel.name + " - CGTube";
-document.getElementById("name").textContent = channel.name;
-document.getElementById("handle").textContent = channel.handle;
-document.getElementById("icon").src = channel.icon;
-document.getElementById("banner").src =
+
+
+document.title =
+channel.name + " - CGTube";
+
+
+
+document.getElementById("channelName")
+.textContent =
+channel.name;
+
+
+
+document.getElementById("handle")
+.textContent =
+channel.handle;
+
+
+
+document.getElementById("icon")
+.src =
+channel.icon;
+
+
+
+document.getElementById("banner")
+.src =
 channel.banner || "";
 
-const container=document.getElementById("videos");
 
-const getVideoId=url=>{
-if(url.includes("youtu.be/")) return url.split("youtu.be/")[1].split("?")[0];
-if(url.includes("watch?v=")) return url.split("watch?v=")[1].split("&")[0];
-if(url.includes("/shorts/")) return url.split("/shorts/")[1].split("?")[0];
-return "";
-};
 
-CGTubeLinks
-.filter(v => v.channelId === channelId)
-.forEach(video => {
 
-const id=getVideoId(video.url);
+
+const container =
+document.getElementById("videos");
+
+
+
+const channelVideos =
+window.CGTubeLinks.filter(
+v => v.channelId === channelId
+);
+
+
+
+channelVideos.forEach(video=>{
+
+
+const id =
+video.url
+.split("v=")[1]
+?.split("&")[0];
+
+
 
 container.innerHTML += `
-<div onclick="location.href='../watch/?v=${id}'"
-style="
-cursor:pointer;
-display:inline-block;
-width:320px;
-margin:10px;
-vertical-align:top;
-">
 
-<img
-src="https://img.youtube.com/vi/${id}/hqdefault.jpg"
-style="
-width:100%;
-border-radius:12px;
-">
+<div class="video-card"
+onclick="location.href='../watch/?v=${id}'">
+
+
+<img src="https://img.youtube.com/vi/${id}/hqdefault.jpg">
+
 
 <h3>${video.title}</h3>
 
-<p style="color:var(--sub)">
-${channel.name}
-</p>
 
-<p style="color:var(--sub);font-size:13px;">
-${video.views || ""} • ${video.uploaded || ""}
-</p>
+<p>${channel.name}</p>
+
 
 </div>
+
 `;
+
 
 });
 
+
+
 </script>
 
-</div>
+
 </body>
+
 </html>
