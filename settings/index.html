@@ -1,1 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CGTube Settings</title>
+
+<link rel="icon"
+href="../images/chickenguntube_weblogo.png">
+
+<style>
+
+:root{
+
+--bg:#0f0f0f;
+--panel:#0f0f0f;
+--card:#181818;
+--hover:#272727;
+--text:#f1f1f1;
+--sub:#aaa;
+--border:#303030;
+
+}
+
+
+body.light{
+
+--bg:#fff;
+--panel:#fff;
+--card:#f0f0f0;
+--hover:#eee;
+--text:#111;
+--sub:#666;
+--border:#ddd;
+
+}
+
+
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+
+body{
+
+background:var(--bg);
+color:var(--text);
+font-family:Arial,Helvetica,sans-serif;
+
+}
+
+
+
+.main{
+
+margin-left:72px;
+min-height:100vh;
+
+}
+
+
+/* SIDEBAR */
+
+
+.sidebar{
+
+position:fixed;
+top:0;
+left:0;
+
+width:72px;
+height:100vh;
+
+background:var(--panel);
+
+border-right:1px solid var(--border);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+z-index:100;
+
+}
+
+
+
+.sidebar-logo{
+
+width:100%;
+height:70px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+
+
+.sidebar-logo img{
+
+width:48px;
+height:48px;
+
+object-fit:contain;
+
+}
+
+
+
+.nav-btn{
+
+width:64px;
+height:74px;
+
+border:none;
+outline:none;
+
+background:none;
+
+color:var(--text);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+gap:6px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+}
+
+
+
+.nav-btn:hover{
+
+background:var(--hover);
+
+}
+
+
+
+.nav-btn svg{
+
+width:24px;
+height:24px;
+
+fill:none;
+
+stroke:currentColor;
+
+stroke-width:2;
+
+stroke-linecap:round;
+stroke-linejoin:round;
+
+}
+
+
+
+.nav-btn span{
+
+font-size:10px;
+
+}
+
+
+
+
+/* TOP */
+
+
+.topbar{
+
+height:56px;
+
+border-bottom:1px solid var(--border);
+
+display:flex;
+
+align-items:center;
+
+padding:0 16px;
+
+}
+
+
+
+.brand img{
+
+height:54px;
+
+}
+
+
+
+
+/* SETTINGS */
+
+
+.content{
+
+padding:30px;
+
+}
+
+
+
+.title{
+
+font-size:32px;
+
+margin-bottom:25px;
+
+}
+
+
+
+.settings-card{
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+border-radius:16px;
+
+padding:25px;
+
+max-width:600px;
+
+}
+
+
+
+.settings-card h2{
+
+font-size:20px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.theme-buttons{
+
+display:flex;
+
+gap:15px;
+
+}
+
+
+
+.theme-btn{
+
+padding:14px 30px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:16px;
+
+background:var(--hover);
+
+color:var(--text);
+
+}
+
+
+
+.theme-btn:hover{
+
+opacity:.8;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="sidebar">
+
+
+<div class="sidebar-logo">
+
+<img src="../images/chickenguntube_weblogo.png">
+
+</div>
+
+
+
+<button class="nav-btn"
+onclick="location.href='/CGTube/'">
+
+
+<svg viewBox="0 0 24 24">
+
+<path d="M3 10L12 3L21 10"></path>
+
+<path d="M5 9V20H19V9"></path>
+
+</svg>
+
+
+<span>Inicio</span>
+
+
+</button>
+
+
+
+
+<button class="nav-btn"
+onclick="location.href='/CGTube/settings/'">
+
+
+<svg viewBox="0 0 24 24">
+
+<circle cx="12" cy="12" r="3"></circle>
+
+<path d="M12 2V5"></path>
+
+<path d="M12 19V22"></path>
+
+<path d="M2 12H5"></path>
+
+<path d="M19 12H22"></path>
+
+</svg>
+
+
+<span>Ajustes</span>
+
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<div class="main">
+
+
+<div class="topbar">
+
+
+<div class="brand">
+
+<img src="../images/chickentube_logo.png">
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+<h1 class="title">
+
+Ajustes
+
+</h1>
+
+
+
+
+<div class="settings-card">
+
+
+<h2>
+
+Tema
+
+</h2>
+
+
+
+<div class="theme-buttons">
+
+
+<button class="theme-btn"
+onclick="setTheme('light')">
+
+Claro
+
+</button>
+
+
+
+<button class="theme-btn"
+onclick="setTheme('dark')">
+
+Oscuro
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+const savedTheme =
+localStorage.getItem("CGTubeTheme");
+
+
+if(savedTheme === "light"){
+
+document.body.classList.add("light");
+
+}
+
+
+
+
+function setTheme(theme){
+
+
+if(theme === "light"){
+
+document.body.classList.add("light");
+
+}
+
+else{
+
+document.body.classList.remove("light");
+
+}
+
+
+
+localStorage.setItem(
+"CGTubeTheme",
+theme
+);
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
