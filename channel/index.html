@@ -363,6 +363,12 @@ id="videos">
 
 <script>
 
+    const savedTheme = localStorage.getItem("CGTubeTheme");
+
+if(savedTheme === "light"){
+    document.body.classList.add("light");
+}
+
 
 const params =
 new URLSearchParams(location.search);
@@ -479,6 +485,26 @@ onclick="location.href='../watch/?v=${id}'">
 
 });
 
+    /* THEME */
+    function toggleTheme(){
+
+    document.body.classList.toggle("light");
+
+    localStorage.setItem(
+        "CGTubeTheme",
+        document.body.classList.contains("light")
+        ? "light"
+        : "dark"
+    );
+
+    }
+
+    /* SETTINGS */
+    function toggleSettings(){
+
+    toggleTheme();
+
+                      }
 
 
 </script>
