@@ -320,11 +320,22 @@ params.get("id");
 
 
 
-const channel =
-window.CGTubeChannels.find(
-c => c.id === channelId
-);
+let channel;
+
+if(window.CGTubeChannels){
+
+    channel = window.CGTubeChannels.find(
+        c => c.id === channelId
+    );
+
     alert("Canal: " + (channel ? channel.name : "NO ENCONTRADO"));
+
+}
+else{
+
+    alert("NO CARGÓ LinkChannel.js");
+
+}
 
 
 
