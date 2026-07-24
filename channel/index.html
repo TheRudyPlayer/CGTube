@@ -385,12 +385,12 @@ const container =
 document.getElementById("videos");
 
 
-
+alert("Videos totales: " + window.CGTubeLinks.length);
 const channelVideos =
 window.CGTubeLinks.filter(
 v => v.channelId === channelId
 );
-
+alert("Videos del canal: " + channelVideos.length);
 
 
 channelVideos.forEach(video=>{
