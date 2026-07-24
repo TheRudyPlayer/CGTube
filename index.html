@@ -461,7 +461,7 @@ body{
 
 </button>
 
-<button class="nav-btn" onclick="toggleSettings()">
+<button class="nav-btn" onclick="location.href='./settings/'">
 
 <svg viewBox="0 0 24 24">
 <circle cx="12" cy="12" r="3"></circle>
@@ -473,18 +473,6 @@ body{
 
 <span>Ajustes</span>
 
-</button>
-
-</div>
-
-<div class="settings" id="settings">
-
-<button onclick="toggleTheme()">
-Cambiar tema
-</button>
-
-<button onclick="randomShort()">
-Short aleatorio
 </button>
 
 </div>
@@ -965,23 +953,6 @@ background-image:url('${video.thumb}')
 `;
 
 });
-
-}
-
-/* SETTINGS */
-
-function toggleSettings(){
-
-const settings =
-document.getElementById(
-"settings"
-);
-
-settings.style.display =
-
-settings.style.display === "block"
-? "none"
-: "block";
 
 }
 
