@@ -197,6 +197,8 @@ body{
 .video-card img{
 
     width:100%;
+    aspect-ratio:16 / 9;
+    object-fit:cover;
 
     border-radius:12px;
 
@@ -388,10 +390,23 @@ alert("Videos del canal: " + channelVideos.length);
 channelVideos.forEach(video=>{
 
 
-const id =
-video.url
-.split("v=")[1]
-?.split("&")[0];
+const getVideoId = url => {
+
+if(url.includes("youtu.be/")){
+    return url.split("youtu.be/")[1].split("?")[0];
+}
+
+if(url.includes("watch?v=")){
+    return url.split("watch?v=")[1].split("&")[0];
+}
+
+if(url.includes("/shorts/")){
+    return url.split("/shorts/")[1].split("?")[0];
+}
+
+return "";
+
+};
 
 
 
