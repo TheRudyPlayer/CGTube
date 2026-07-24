@@ -386,11 +386,7 @@ v => v.channelId === channelId
 );
 alert("Videos del canal: " + channelVideos.length);
 
-
-channelVideos.forEach(video=>{
-
-
-const getVideoId = url => {
+    const getVideoId = url => {
 
 if(url.includes("youtu.be/")){
     return url.split("youtu.be/")[1].split("?")[0];
@@ -408,6 +404,9 @@ return "";
 
 };
 
+channelVideos.forEach(video=>{
+
+const id = getVideoId(video.url);
 
 
 container.innerHTML += `
@@ -428,7 +427,6 @@ onclick="location.href='../watch/?v=${id}'">
 </div>
 
 `;
-
 
 });
 
