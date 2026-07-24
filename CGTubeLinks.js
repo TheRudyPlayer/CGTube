@@ -74,7 +74,7 @@ window.CGTubeLinks = [
     url: "https://youtu.be/FCJ9hZnFrTo",
     title: "😵‍YA LLEGO LA 5.3.0 De Chicken Gun 🔥😱¡Podemos Crear Mecanismos! | J.R CRACK",
     channel: "J.R CRACK",
-    channelId: ""
+    channelId: "UC5aLmBd_aN34pcpjTxjvEPw"
 },
 
 {
@@ -102,21 +102,21 @@ window.CGTubeLinks = [
     url: "https://youtu.be/oRSi2adINes",
     title: "🔥🐔 La PRIMERA VERSIÓN de Chicken Gun en 2026 😱 | Es Increíble!!! J.R CRACK",
     channel: "J.R CRACK",
-    channelId: ""
+    channelId: "UC5aLmBd_aN34pcpjTxjvEPw"
 },
 
 {
     url: "https://youtu.be/vfejXap4dpM",
     title: "🔥Me METÍ A Servidores EXTRAÑOS De Chicken Gun 😱 Me Encuentro A Suscriptores | J.R CRACK",
     channel: "J.R CRACK",
-    channelId: ""
+    channelId: "UC5aLmBd_aN34pcpjTxjvEPw"
 },
 
 {
     url: "https://youtu.be/i7shcD7dqx4",
     title: "⭐Actualización MUSICAL De Chicken Gun🎶🎸 Versión 5.4.0 | J.R CRACK",
     channel: "J.R CRACK",
-    channelId: ""
+    channelId: "UC5aLmBd_aN34pcpjTxjvEPw"
 },
 
 {
