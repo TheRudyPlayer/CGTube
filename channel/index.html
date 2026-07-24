@@ -325,11 +325,12 @@ document.getElementById("videos").innerHTML="<h2>Canal no encontrado</h2>";
 throw "";
 }
 
-document.title=channel.name+" - CGTube";
-name.textContent=channel.name;
-handle.textContent=channel.handle;
-icon.src=channel.icon;
-banner.src=channel.banner||"";
+document.title = channel.name + " - CGTube";
+document.getElementById("name").textContent = channel.name;
+document.getElementById("handle").textContent = channel.handle;
+document.getElementById("icon").src = channel.icon;
+document.getElementById("banner").src =
+channel.banner || "";
 
 const container=document.getElementById("videos");
 
