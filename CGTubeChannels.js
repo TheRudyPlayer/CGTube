@@ -30,9 +30,9 @@ window.CGTubeChannels = [
     id: "UC-unh3YIkpHzRCeiZ6RRZ9A",
     handle: "@MirtHDD",
     name: "MirtHD",
-    icon: "https://i.postimg.cc/hPvhnps0/mirticon.png",
+    icon: "https://i.postimg.cc/9MhLY3Yh/channels4-profile-(27).jpg",
     verified: false,
-    banner: ""
+    banner: "https://i.postimg.cc/JhJTX7JP/channels4-banner-(4).jpg"
 },
 {
     id: "UCK8HhT4BypRtaycRMmQD8lQ",
@@ -48,7 +48,7 @@ window.CGTubeChannels = [
     name: "STIFF LXR",
     icon: "https://i.postimg.cc/Zq8YQNLb/57-sin-titulo-20260629151052.png",
     verified: true,
-    banner: ""
+    banner: "https://i.postimg.cc/dVgHDZhz/channels4-banner-(5).jpg"
 },
 {
     id: "UCfbZzAbUVz3JsYPSOSx6jTA",
@@ -80,7 +80,7 @@ window.CGTubeChannels = [
     name: "Eitee",
     icon: "https://i.postimg.cc/6qdyykdg/eiteeicon.png",
     verified: false,
-    banner: ""
+    banner: "https://i.postimg.cc/C1smvvcz/channels4-banner-(3).jpg"
 },
 {
     id: "UCBlfTiAktH1S0ASIkjRnDhg",
