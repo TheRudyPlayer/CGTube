@@ -49,7 +49,20 @@ window.CGTubeLinks = [
     url: "https://youtu.be/UqZff8U7ccg",
     title: "(INFORMACIÓN ERRONEA) El Mapa Oculto de ChickenGun | MirtHD",
     channel: "MirtHD",
-    description: "",
+    description: `¿Qué utilizo para hacer mis videos?
+
+🖥Kinemaster (Para Editar)
+🖼 IbisPaint X (Para hacer las miniaturas)
+📸 Xrecorder: Grabar los videos.
+🗣 Voces: Voz de Zueira
+
+Toda la música usada en este video esta en una playlist del canal
+
+Tags (Ignorar)
+#chickengun #mapa #mirthd 
+
+
+Copyright Disclaimer: - Under section 107 of the copyright Act 1976, allowance is mad for FAIR USE for purpose such a as criticism, comment, news reporting, teaching, scholarship and research. Fair use is a use permitted by copyright statues that might otherwise be infringing. Non- Profit, educational or personal use tips the balance in favor of FAIR USE.`,
     published: "",
     channelId: "UC-unh3YIkpHzRCeiZ6RRZ9A"
 },
