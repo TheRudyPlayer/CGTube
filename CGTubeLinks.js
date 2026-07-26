@@ -4,8 +4,8 @@ window.CGTubeLinks = [
     url: "https://youtu.be/_hdKjo5NR40",
     title: "Cosas que YO odio de Chicken gun",
     channel: "ThreeGames",
-    description: "",
-    published: "",
+    description: "No se xd #Chickengun",
+    published: "23 Sep 2024",
     channelId: "UCfbZzAbUVz3JsYPSOSx6jTA"
 },
 
@@ -13,8 +13,13 @@ window.CGTubeLinks = [
     url: "https://youtu.be/m3M-RwZebEk",
     title: "😱 New secret in chicken gun update 5.4.04",
     channel: "Bloody Player",
-    description: "",
-    published: "",
+    description: `😱 New secret in chicken gun update 5.4.04
+
+
+#chickengunnewupdate 
+#chickengun 
+#chickengunsecret`,
+    published: "31 Mar 2026",
     channelId: ""
 },
 
@@ -22,8 +27,61 @@ window.CGTubeLinks = [
     url: "https://youtu.be/fZbO_Tw-o3Q",
     title: "😱 HOW TO GET NEW SECRET DRONE IN CHICKEN GUN NEW UPDATE!!",
     channel: "Genius Gaming World",
-    description: "",
-    published: "",
+    description: `😱 HOW TO GET NEW SECRET DRONE IN CHICKEN GUN NEW UPDATE!!
+
+
+╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗
+║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣ 
+╠╗║╚╝║║╠╗║╚╣║║║║║═╣
+╚═╩══╩═╩═╩═╩╝╚╩═╩═╝
+
+Download chicken gun
+https://play.google.com/store/apps/details?id=com.chaloapps.roosterrudy
+
+
+Chicken gun
+Chicken gun game
+Chicken gun new update
+Chicken gun tall chicken
+Chicken gun meat chicken
+Chicken gun secrets
+Chicken gun trend
+Chicken gun GGW
+chicken gun Genius Gaming World
+Chicken gun 
+Chicken gun 
+Chicken gun den19k
+Chicken gun playing
+Chicken gun bugs
+Chicken gun
+Chicken gun myths
+Chicken gun checking myths
+Chicken gun secrets
+Chicken gun horror story
+Chicken gun creepypasta 
+Chicken gun all Easter eggs 
+Chicken gun new update 
+Chicken gun 
+Chicken gun update
+Chicken gun 4.1.0
+Chicken gun new update 4.1.0
+Chicken gun 4.1.0
+Chicken gun 4.1.0 Easter eggs 
+Chicken gun panda skin 
+Chicken gun secret panda 
+Chicken gun funny video
+Chicken gun 4.9.0
+Chicken gun 5.4.0
+chicken gun new update 5.4.0
+Chicken gun update 5.4.0 
+Chicken gun 5.4.0 all Easter eggs
+
+___________________________________________
+
+
+Thanks for reading
+❤️ SUBSCRIBE`,
+    published: "31 Mar 2026",
     channelId: ""
 },
 
