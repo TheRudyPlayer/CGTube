@@ -240,29 +240,29 @@ window.CGTubeLinks = [
 
 {
     url: "https://youtu.be/S2ftuageELc",
-    title: "",
-    channel: "",
+    title: "The Downfall of Chicken gun",
+    channel: "Sithpaul",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/fp4EbUAm600",
-    title: "",
-    channel: "",
+    title: "This Game is STUPID",
+    channel: "DJHatesGames",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/EjaVs-mQZs4",
-    title: "",
-    channel: "",
+    title: "(YTPH) Friego Gramaz Gaymer juega la nueva actualizaciSoS de Chicken SoS",
+    channel: "JACI[𝐆𝐃¦𝐆𝐂]",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/ToZOhway8p8",
-    title: "",
-    channel: "",
+    title: "los 3 Youtubers más queridos de chicken gun (habla hispana)",
+    channel: "JACI[𝐆𝐃¦𝐆𝐂]",
     channelId: ""
 },
 
