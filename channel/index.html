@@ -196,6 +196,37 @@ body{
     color:var(--sub);
 
 }
+    
+/* VERIFIED */
+.channel-name{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:32px;
+    margin:0;
+
+}
+
+.verified{
+
+    width:24px;
+    height:24px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#3ea6ff;
+    color:#fff;
+
+    font-size:15px;
+    font-weight:bold;
+
+}
 
 
 
@@ -385,10 +416,13 @@ class="channel-icon">
 <div>
 
 
-<h1 id="channelName"
-class="channel-name">
+<h1 class="channel-name">
 
+<span id="channelName">
 Canal
+</span>
+
+<span id="verifiedBadge"></span>
 
 </h1>
 
@@ -470,7 +504,17 @@ document.getElementById("channelName")
 .textContent =
 channel.name;
 
+if(channel.verified){
 
+    document.getElementById(
+        "verifiedBadge"
+    ).innerHTML = "✓";
+
+    document.getElementById(
+        "verifiedBadge"
+    ).className = "verified";
+
+    }
 
 document.getElementById("handle")
 .textContent =
