@@ -239,13 +239,6 @@ window.CGTubeLinks = [
 },
 
 {
-    url: "https://youtu.be/3Y1JQKWhbp0",
-    title: "",
-    channel: "",
-    channelId: ""
-},
-
-{
     url: "https://youtu.be/S2ftuageELc",
     title: "",
     channel: "",
