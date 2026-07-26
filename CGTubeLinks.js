@@ -779,15 +779,6 @@ creepypastas de chicken gun,miedo, #terror #miedo #creepy #creepypasta`,
 },
 
 {
-    url: "https://youtu.be/INLE9Bdap54",
-    title: "",
-    channel: "",
-    description: "",
-    published: "",
-    channelId: ""
-},
-
-{
     url: "https://youtu.be/EO_NXLRRdXY",
     title: "",
     channel: "",
