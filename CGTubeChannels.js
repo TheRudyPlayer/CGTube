@@ -15,7 +15,7 @@ window.CGTubeChannels = [
     name: "J.R CRACK",
     icon: "https://i.postimg.cc/9QRfXYmq/channels4-profile-(10).jpg",
     verified: true,
-    banner: ""
+    banner: "https://i.postimg.cc/VLLjwsk9/channels4-banner-(2).jpg"
 },
 
 {
