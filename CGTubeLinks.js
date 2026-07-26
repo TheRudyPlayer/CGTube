@@ -129,8 +129,39 @@ Copyright Disclaimer: - Under section 107 of the copyright Act 1976, allowance i
     url: "https://youtu.be/cGpKTx35maM",
     title: "MODERACIÓN en CHICKEN GUN!?!?! (Concepto) | Eitee",
     channel: "Eitee",
-    description: "",
-    published: "",
+    description: `concepto xd
+
+#chickengun #chickengungame 
+
+
+TAGS (ignorar xdddd)
+
+Online sandbox and shooter,
+team fight,
+classic and team battle royale modes,
+chickens gun, Juegos de armas, aviones,
+helicóptero, mas juegos, stickman, juego
+#chickengun #chickengungame chicken gun,
+chicken gun gameplay,chicken gun game,
+чикен ган 2 chicken gun,chicken gun 3am,
+chiken gun,videos de chicken gun,chicken gun 
+terror,chicken gun memes,chicken gun creepypastas,
+чикен ган,сhicken gun de terror,
+chicken gun funny moments,misterios de chicken gun,
+secretos de chicken gun,chicken gun 2,
+chicken gun creepypasta,creepypasta de chicken gun,
+chicken gun zombie,#chickengun,chicken gun secretos,
+stiff Ixr, raimt,canciones de chicken gun,chicken gun 666,
+chickengun,chicken gun español, creepypastas de chicken Gun Online sandbox and shooter,
+eam fight, classic and team battle royale modes, chickens gun, Juegos de armas, aviones,
+helicóptero, mas juegos, stickman, juego #chickengun #chickengungame chicken gun,
+chicken gun gameplay,chicken gun game,чикен ган 2 chicken gun,chicken gun 3am,
+chiken gun,videos de chicken gun,chicken gun terror,chicken gun memes,chicken gun creepypastas,
+чикен ган,сhicken gun de terror,chicken gun funny moments,misterios de chicken gun,
+secretos de chicken gun,chicken gun 2,chicken gun creepypasta,creepypasta de chicken gun,
+chicken gun zombie,#chickengun,chicken gun secretos,stiff Ixr, raimt,canciones de chicken gun,
+chicken gun 666,chickengun,chicken gun español, creepypastas de chicken gun`,
+    published: "21 Jul 2023",
     channelId: "UCaBkS2wy-8lLgoGOZV36uDw"
 },
 
@@ -138,8 +169,27 @@ Copyright Disclaimer: - Under section 107 of the copyright Act 1976, allowance i
     url: "https://youtu.be/jUUGSuCHJbg",
     title: "Cómo INVOCAR a MEAT CHICKEN | Eitee",
     channel: "Eitee",
-    description: "",
-    published: "",
+    description: `Da miedo!
+
+TAGS! (ignorar)
+
+Online sandbox and shooter, team fight, classic and team battle royale modes,
+chickens gun, Juegos de armas, aviones, helicóptero, mas juegos, stickman,
+juego #chickengun #chickengungame chicken gun,chicken gun gameplay,chicken gun game,
+чикен ган 2 chicken gun,chicken gun 3am,chiken gun,videos de chicken gun,
+chicken gun terror,chicken gun memes,chicken gun creepypastas,чикен ган,
+сhicken gun de terror,chicken gun funny moments,misterios de chicken gun,
+secretos de chicken gun,chicken gun 2,chicken gun creepypasta,creepypasta de chicken gun,
+chicken gun zombie,#chickengun,chicken gun secretos,stiff Ixr, raimt,canciones de chicken gun,
+chicken gun 666,chickengun,chicken gun español, creepypastas de chicken gunOnline sandbox and shooter,
+team fight, classic and team battle royale modes, chickens gun, Juegos de armas, aviones, helicóptero,
+mas juegos, stickman, juego #chickengun #chickengungame chicken gun,chicken gun gameplay,chicken gun game,
+чикен ган 2 chicken gun,chicken gun 3am,chiken gun,videos de chicken gun,chicken gun terror,chicken gun memes,
+chicken gun creepypastas,чикен ган,сhicken gun de terror,chicken gun funny moments,misterios de chicken gun,
+secretos de chicken gun,chicken gun 2,chicken gun creepypasta,creepypasta de chicken gun,chicken gun zombie,
+#chickengun,chicken gun secretos,stiff Ixr, raimt,canciones de chicken gun,chicken gun 666,chickengun,chicken gun español,
+creepypastas de chicken gun,miedo, #terror #miedo #creepy #creepypasta`,
+    published: "21 Ago 2023",
     channelId: "UCaBkS2wy-8lLgoGOZV36uDw"
 },
 
