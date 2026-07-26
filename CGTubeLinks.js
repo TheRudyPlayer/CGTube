@@ -46,28 +46,28 @@ window.CGTubeLinks = [
     url: "https://youtu.be/cGpKTx35maM",
     title: "MODERACIÓN en CHICKEN GUN!?!?! (Concepto) | Eitee",
     channel: "Eitee",
-    channelId: ""
+    channelId: "UCaBkS2wy-8lLgoGOZV36uDw"
 },
 
 {
     url: "https://youtu.be/jUUGSuCHJbg",
     title: "Cómo INVOCAR a MEAT CHICKEN | Eitee",
     channel: "Eitee",
-    channelId: ""
+    channelId: "UCaBkS2wy-8lLgoGOZV36uDw"
 },
 
 {
     url: "https://youtu.be/NY8sJ0eSC-w",
     title: "COMO CONSEGUIR al NEXTBOT en CHICKEN GUN! (I See You) | Eitee",
     channel: "Eitee",
-    channelId: ""
+    channelId: "UCaBkS2wy-8lLgoGOZV36uDw"
 },
 
 {
     url: "https://youtu.be/zl1oLKIbEvE",
     title: "¡LISTA de AMIGOS en CHICKEN GUN! (Concepto) | Eitee",
     channel: "Eitee",
-    channelId: ""
+    channelId: "UCaBkS2wy-8lLgoGOZV36uDw"
 },
 
 {
@@ -200,7 +200,7 @@ window.CGTubeLinks = [
     url: "https://youtu.be/2kS7SP3uBSk",
     title: "Tutorial de Comandos del Chicken Gun! (Color, Size y Scale) | Eitee",
     channel: "Eitee",
-    channelId: ""
+    channelId: "UCaBkS2wy-8lLgoGOZV36uDw"
 },
 
 {
