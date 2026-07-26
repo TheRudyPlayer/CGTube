@@ -268,148 +268,148 @@ window.CGTubeLinks = [
 
 {
     url: "https://youtu.be/ia5oVfglWk4",
-    title: "",
-    channel: "",
+    title: "pov: jugaste chicken gun cuando salió: (actualización de mi video mas viral)",
+    channel: "JACI[𝐆𝐃¦𝐆𝐂]",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/FFj9nj8Jo5Q",
-    title: "",
-    channel: "",
+    title: "Chicken Gun Zombie,Guía de 5 nuevos logros (video hecho a la prisa)",
+    channel: "RudyFachero",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/QRanoZgVGXE",
-    title: "",
-    channel: "",
+    title: "¿Vale la pena comprarlos? Objetos de paga y robux en Chicken Gun Zombie Roblox",
+    channel: "RudyFachero",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/vMsVTK04rig",
-    title: "",
-    channel: "",
+    title: "Los hackers de #chickengun han llegado a lo peor...",
+    channel: "RudyFachero",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/SOzU2WjVBT0",
-    title: "",
-    channel: "",
+    title: "¿Tall Mr.Meow es Real? ||| CREEPYPASTA HUNTERS",
+    channel: "Mr.TV!",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/PmpRDiCbvH8",
-    title: "",
-    channel: "",
+    title: "Sobrevivo 24 Horas en una Isla en la Nada del Oceano 🏝🕒 (en la madrugada pasa algo extraño 😱)",
+    channel: "Mr.TV!",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/HOndOaM4x1I",
-    title: "",
-    channel: "",
+    title: "Ocurre un terremoto en la Ciudad de Chicken Gun!!! 😨 (Se cae el Edificio Famoso de 5 estrellas 💥)",
+    channel: "Mr.TV!",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/mZ4jG7wvDmE",
-    title: "",
-    channel: "",
+    title: "👷БИТВА СТРОИТЕЛЕЙ DEN19K VS ZHURA24K В ЧИКЕН ГАН!",
+    channel: "DIMON22K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/w4Kdn-Lr8pk",
-    title: "",
-    channel: "",
+    title: "😰 НОВАЯ ПЛАЧУЩАЯ КУРИЦА В ЧИКЕН ГАН!? *ПРОВЕРКА МИФОВ*",
+    channel: "DIMON22K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/qjQVertQLCo",
-    title: "",
-    channel: "",
+    title: "😂ЭТО САМЫЕ СМЕШНЫЕ МЕМЫ ОТ ПОДПИСЧИКОВ В ЧИКЕН ГАН!!",
+    channel: "DIMON22K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/c34odL_Rn80",
-    title: "",
-    channel: "",
+    title: "😱Это ЛУЧШАЯ ИГРА Про ЧИКЕН ГАН в РОБЛОКСЕ!",
+    channel: "DEN19K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/XZrawdRI_kc",
-    title: "",
-    channel: "",
+    title: "Untitled",
+    channel: "DEN19K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/Qi3riINB2SI",
-    title: "",
-    channel: "",
+    title: "😱ЭВОЛЮЦИЯ ЧИКЕН ГАН! **Самая ПЕРВАЯ Версия**",
+    channel: "DEN19K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/-8XfPTKQORo",
-    title: "",
-    channel: "",
+    title: "😱ТАЙНА Раскрыта! АЙСБЕРГ По ЧИКЕН ГАН! **Самые ТАЙНЫЕ и СЕКРЕТНЫЕ Факты**",
+    channel: "DEN19K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/fwFi5cXp-mc",
-    title: "",
-    channel: "",
+    title: "😱Я Притворился НУБОМ в ЧИКЕН ГАН! Задания От ЮТУБЕРОВ",
+    channel: "DEN19K",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/fOz_TY9vaJA",
-    title: "",
-    channel: "",
+    title: "🤯 РАБОЧАЯ МАШИНА В ЧИКЕН ГАН | ПОСТРОЙКА | ПОВОРАЧИВАЕТ И ЕДЕТ 😧 | [Chicken Gun]",
+    channel: "Памперс",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/UZIYZZZmDF0",
-    title: "",
-    channel: "",
+    title: "ЛУЧШИЙ АВТОДОМ | ОБЗОР ПОСТРОЙКИ В ЧИКЕН ГАН | ПАМПЕРС [Chicken gun]",
+    channel: "Памперс",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/tcLvmRYfRBI",
-    title: "",
-    channel: "",
+    title: "😱 ЛУЧШИЙ ПОЕЗД В ЧИКЕН ГАН | ОБЗОР ПОСТРОЙКИ | ПАМПЕРС [Chicken gun]",
+    channel: "Памперс",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/P7XFYl7s-RM",
-    title: "",
-    channel: "",
+    title: "✈️ ЛУЧШИЙ САМОЛЕТ В ЧИКЕН ГАН | ОБЗОР ПОСТРОЙКИ [CHICKEN GUN] | by Pampers",
+    channel: "Памперс",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/TlYL0nddHJg",
-    title: "",
-    channel: "",
+    title: `🔥 ЛУЧШАЯ ПОСТРОЙКА В ЧИКЕН ГАНЕ | САМОСВАЛ "КамАЗ 65115" | 😱 ОН ПОПАЛ В ИГРУ | CHICKEN GUN [Памперс]`,
+    channel: "Памперс",
     channelId: ""
 },
 
 {
     url: "https://youtu.be/E39QlO7pk1c",
-    title: "",
-    channel: "",
+    title: "Los modos MAS INFRAVALORADOS de chicken gun",
+    channel: "General_pro54",
     channelId: ""
 },
 
